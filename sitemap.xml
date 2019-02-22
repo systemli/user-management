@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/userli/development/documentation/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/getting-started/</loc>
   </url>
   
@@ -12,6 +16,10 @@
   
   <url>
     <loc>/userli/getting-started/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/development/</loc>
   </url>
   
   <url>

@@ -1,5 +1,12 @@
 [
 {
+	"uri": "/userli/development/documentation/",
+	"title": "Documentation",
+	"tags": [],
+	"description": "Built with Hugo and hosted on Github Pages",
+	"content": " This page describes how to edit the documentation you\u0026rsquo;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.\ncd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).\nEditing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.\ngit commit -a  Testing Run hugo locally to see if your content looks like you imagined.\nhugo server  Open http://localhost:1313/ in your local browser.\nPublishing Run the following script to commit to the branch gh-pages. From there, github auto-deploys the documentation.\n./publish_docs.sh  See Hugo documentation for more details.\n"
+},
+{
 	"uri": "/userli/getting-started/",
 	"title": "Getting started",
 	"tags": [],
@@ -19,6 +26,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Adjust the default values by creating a .env file.\nAPP_ENV=prod APP_NAME=Userli APP_SECRET=\u0026lt;random secret string\u0026gt; APP_URL=https://users.example.org/ DATABASE_DRIVER=pdo_mysql DATABASE_URL=mysql://mailuser:\u0026lt;password\u0026gt;@127.0.0.1:3306/mail MAILER_URL=smtp://localhost:25?encryption=\u0026amp;auth_mode= PROJECT_NAME=example.org PROJECT_URL=https://www.example.org/ DOMAIN=example.org SENDER_ADDRESS=userli@example.org NOTIFICATION_ADDRESS=admin@example.org SEND_MAIL=true LOCALE=en HAS_SINA_BOX=false MAIL_CRYPT_ENABLED=1 MAIL_CRYPT_AUTO=1 "
+},
+{
+	"uri": "/userli/development/",
+	"title": "Development",
+	"tags": [],
+	"description": "",
+	"content": "  Documentation Built with Hugo and hosted on Github Pages\n  "
 },
 {
 	"uri": "/userli/categories/",

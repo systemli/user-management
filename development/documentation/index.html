@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-02-22T18:11:37 CET">
-<title>Installation :: Userli Documentation</title>
+<title>Documentation :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+<meta name="description" content="Built with Hugo and hosted on Github Pages">
 
 
     
   </head>
-  <body data-url="/userli/getting-started/installation/">
+  <body data-url="/userli/development/documentation/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -61,14 +61,14 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/userli/getting-started/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/userli/getting-started/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/userli/getting-started/">Getting started</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/getting-started/installation/" class="dd-item active">
+      <li data-nav-id="/userli/getting-started/installation/" class="dd-item">
         <div>
           <a href="/userli/getting-started/installation/">
             Installation
@@ -84,13 +84,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/development/" class="dd-item haschildren
+    <li data-nav-id="/userli/development/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/userli/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/development/">Development</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/development/documentation/" class="dd-item">
+      <li data-nav-id="/userli/development/documentation/" class="dd-item active">
         <div>
           <a href="/userli/development/documentation/">
             Documentation
@@ -130,7 +131,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/getting-started/installation.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/development/documentation.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -150,7 +151,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/getting-started/'>Getting started</a> > Installation
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/development/'>Development</a> > Documentation
 
  
 
@@ -163,7 +164,17 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#editing">Editing</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#publishing">Publishing</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -173,7 +184,7 @@
 
 <div id="body-inner">
   
-    <h1>Installation</h1>
+    <h1>Documentation</h1>
   
 
 
@@ -181,7 +192,47 @@
     
     
     
-    <p>The following steps are here to help you instal Userli.</p>
+    
+
+<p>This page describes how to edit the documentation you&rsquo;re currently reading.
+The whole documentation is located in the directory <code>hugo</code>. Change into this directory.
+All following commands are supposed to be run from here.</p>
+
+<pre><code>cd hugo
+</code></pre>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>Download <a href="https://gohugo.io/overview/installing/">Hugo binary</a> for your OS (Windows, Linux, Mac).</p>
+
+<h2 id="editing">Editing</h2>
+
+<p>Change files in <code>hugo/content</code> to edit the documentation.
+See the <a href="https://docdock.netlify.com/original/content-organisation/">DocDock documentation</a> for more information on how to organize content.
+Afterwards, commit your work to your repository.</p>
+
+<pre><code>git commit -a
+</code></pre>
+
+<h2 id="testing">Testing</h2>
+
+<p>Run <code>hugo</code> locally to see if your content looks like you imagined.</p>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>Open <a href="http://localhost:1313/">http://localhost:1313/</a> in your local browser.</p>
+
+<h2 id="publishing">Publishing</h2>
+
+<p>Run the following script to commit to the branch <code>gh-pages</code>.
+From there, github auto-deploys the documentation.</p>
+
+<pre><code>./publish_docs.sh
+</code></pre>
+
+<p>See <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch">Hugo documentation</a> for more details.</p>
+
 
     
     
@@ -192,8 +243,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/" title="Getting started"> <i class="fa fa-chevron-left"></i><label>Getting started</label></a>
-    <a class="nav nav-next" href="/userli/getting-started/configuration/" title="Configuration" style="margin-right: 0px;"><label>Configuration</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/development/" title="Development"> <i class="fa fa-chevron-left"></i><label>Development</label></a>
+    <a class="nav nav-next" href="/userli/getting-started/" title="Getting started" style="margin-right: 0px;"><label>Getting started</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
