@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Userli Documentation</title>
+    <link>/userli/</link>
+    <description>Recent content on Userli Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/userli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation</title>
+      <link>/userli/getting-started/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/getting-started/installation/</guid>
+      <description>&lt;p&gt;The following steps are here to help you instal Userli.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>/userli/getting-started/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/getting-started/configuration/</guid>
+      <description>&lt;p&gt;Adjust the default values by creating a &lt;code&gt;.env&lt;/code&gt; file.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

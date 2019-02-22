@@ -1,0 +1,43 @@
+[
+{
+	"uri": "/userli/getting-started/",
+	"title": "Getting started",
+	"tags": [],
+	"description": "",
+	"content": " Requirements  Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  "
+},
+{
+	"uri": "/userli/getting-started/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": "The following steps are here to help you instal Userli.\n"
+},
+{
+	"uri": "/userli/getting-started/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": "Adjust the default values by creating a .env file.\n"
+},
+{
+	"uri": "/userli/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/userli/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/userli/",
+	"title": "Userli Documentation",
+	"tags": [],
+	"description": "Web application to (self-) manage email users and encrypt their mailboxes.",
+	"content": " Userli Documentation Web application to (self-) manage email users and encrypt their mailboxes.\nFeatures  User self-service (change password/recovery token, set aliases, \u0026hellip;) Invite code system (new users get three invite codes after one week) Domain admins (accounts with admin rights for one domain) Random alias feature for users Recovery tokens to restore accounts when password got lost Support for Dovecot mailbox encryption  This is a start. Please help to improve the documentation.\n"
+}]
