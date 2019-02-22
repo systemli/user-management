@@ -18,7 +18,7 @@
 	"title": "Configuration",
 	"tags": [],
 	"description": "",
-	"content": "Adjust the default values by creating a .env file.\n"
+	"content": "Adjust the default values by creating a .env file.\nAPP_ENV=prod APP_NAME=Userli APP_SECRET=\u0026lt;random secret string\u0026gt; APP_URL=https://users.example.org/ DATABASE_DRIVER=pdo_mysql DATABASE_URL=mysql://mailuser:\u0026lt;password\u0026gt;@127.0.0.1:3306/mail MAILER_URL=smtp://localhost:25?encryption=\u0026amp;auth_mode= PROJECT_NAME=example.org PROJECT_URL=https://www.example.org/ DOMAIN=example.org SENDER_ADDRESS=userli@example.org NOTIFICATION_ADDRESS=admin@example.org SEND_MAIL=true LOCALE=en HAS_SINA_BOX=false MAIL_CRYPT_ENABLED=1 MAIL_CRYPT_AUTO=1 "
 },
 {
 	"uri": "/userli/categories/",

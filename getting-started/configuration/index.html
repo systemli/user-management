@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-02-22T16:41:15 CET">
+<meta name="revised" content="2019-02-22T16:47:39 CET">
 <title>Configuration :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -167,6 +167,25 @@
     
     
     <p>Adjust the default values by creating a <code>.env</code> file.</p>
+
+<pre><code>APP_ENV=prod
+APP_NAME=Userli
+APP_SECRET=&lt;random secret string&gt;
+APP_URL=https://users.example.org/
+DATABASE_DRIVER=pdo_mysql
+DATABASE_URL=mysql://mailuser:&lt;password&gt;@127.0.0.1:3306/mail
+MAILER_URL=smtp://localhost:25?encryption=&amp;auth_mode=
+PROJECT_NAME=example.org
+PROJECT_URL=https://www.example.org/
+DOMAIN=example.org
+SENDER_ADDRESS=userli@example.org
+NOTIFICATION_ADDRESS=admin@example.org
+SEND_MAIL=true
+LOCALE=en
+HAS_SINA_BOX=false
+MAIL_CRYPT_ENABLED=1
+MAIL_CRYPT_AUTO=1
+</code></pre>
 
     
     
