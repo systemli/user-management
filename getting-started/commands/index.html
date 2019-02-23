@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.54.0" />
     <title>Userli Documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-02-23T11:53:50 CET">
-<title>Userli Documentation :: Userli Documentation</title>
+<title>Commands :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -23,12 +22,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="Web application to (self-) manage email users and encrypt their mailboxes.">
+<meta name="description" content="">
 
 
     
   </head>
-  <body data-url="/userli/">
+  <body data-url="/userli/getting-started/commands/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -62,7 +61,7 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/userli/getting-started/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/userli/getting-started/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/userli/getting-started/">Getting started</a>
@@ -90,7 +89,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/commands/" class="dd-item">
+      <li data-nav-id="/userli/getting-started/commands/" class="dd-item active">
         <div>
           <a href="/userli/getting-started/commands/">
             Commands
@@ -139,8 +138,56 @@
 <div id="overlay"></div>
 <div class="padding highlightable">
 
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/getting-started/commands.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/getting-started/'>Getting started</a> > Commands
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    
+        </div>
+    </div>
+    
+
+  </div>
+
 
 <div id="body-inner">
+  
+    <h1>Commands</h1>
   
 
 
@@ -148,31 +195,26 @@
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
+    <p>This app brings custom commands:</p>
 
+<pre><code>app:munin:account          # Return number of account to munin
+app:munin:alias            # Return number of aliases to munin
+app:munin:voucher          # Return number of vouchers to munin
+app:registration:mail      # Send a registration mail to a user
+app:report:weekly          # Send weekly report to all admins
+app:reservednames:import   # Import reserved names from stdin or file
+app:users:check            # Check if user is present
+app:users:mailcrypt        # Get MailCrypt values for user
+app:users:quota            # Get quota of user if set
+app:users:remove           # Removes all mailboxes from deleted users
+app:voucher:create         # Create voucher for a specific user
+app:voucher:unlink         # Remove connection between vouchers and accounts after 3 months
+</code></pre>
 
-<h1 id="userli-documentation">Userli Documentation</h1>
+<p>Get more information about each command by running:</p>
 
-<p>Web application to (self-) manage email users and encrypt their mailboxes.</p>
-
-<h2 id="features">Features</h2>
-
-<ul>
-<li>User self-service (change password/recovery token, set aliases, &hellip;)</li>
-<li>Invite code system (new users get three invite codes after one week)</li>
-<li>Domain admins (accounts with admin rights for one domain)</li>
-<li>Random alias feature for users</li>
-<li>Recovery tokens to restore accounts when password got lost</li>
-<li>Support for <a href="https://wiki.dovecot.org/Plugins/MailCrypt">Dovecot mailbox encryption</a></li>
-</ul>
-
-<p>This is a start. Please help to improve the documentation.</p>
-
-
-
+<pre><code>bin/console {{ command }} --help
+</code></pre>
 
     
     
@@ -183,7 +225,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-next" href="/userli/getting-started/" title="Getting started" style="margin-right: 0px;"><label>Getting started</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/getting-started/finalize/" title="Finalize the setup"> <i class="fa fa-chevron-left"></i><label>Finalize the setup</label></a>
+    <a class="nav nav-next" href="/userli/development/" title="Development" style="margin-right: 0px;"><label>Development</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -23,6 +23,14 @@
   </url>
   
   <url>
+    <loc>/userli/getting-started/finalize/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/getting-started/commands/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/categories/</loc>
     <priority>0</priority>
   </url>

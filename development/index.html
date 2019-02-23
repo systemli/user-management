@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-02-22T18:11:37 CET">
+<meta name="revised" content="2019-02-23T11:53:50 CET">
 <title>Development :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -79,6 +79,20 @@
         <div>
           <a href="/userli/getting-started/configuration/">
             Configuration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/finalize/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/finalize/">
+            Finalize the setup
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/commands/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/commands/">
+            Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -159,7 +173,16 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#start-vagrant-box">Start Vagrant box</a></li>
+<li><a href="#tests">Tests</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -177,6 +200,48 @@
     
     
     
+
+
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+<li><a href="https://vagrantup.com/">Vagrant</a></li>
+</ul>
+
+<h2 id="start-vagrant-box">Start Vagrant box</h2>
+
+<pre><code>git submodule update --init
+cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+
+# create database and schema
+bin/console doctrine:schema:create
+
+# load sample data
+bin/console doctrine:fixtures:load
+
+# get node modules
+yarn
+
+# update assets
+yarn encore dev
+</code></pre>
+
+<p>The <code>doctrine:fixtures:load</code> command will create four new accounts with
+corresponding roles (<code>admin</code>, <code>user</code>, <code>support</code>, <code>suspicious</code>) as well
+as some random aliases and vouchers. The domain for all accounts is
+&ldquo;example.org&rdquo; and the password is &ldquo;password&rdquo;.</p>
+
+<p>If you want to see more details about how the users are created, see
+<code>src/DataFixtures</code>.</p>
+
+<p>Visit you local instance at <a href="http://192.168.33.99/">http://192.168.33.99/</a>.</p>
+
+<h2 id="tests">Tests</h2>
+
+<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+make test
+</code></pre>
 
 
 
@@ -204,7 +269,7 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/configuration/" title="Configuration"> <i class="fa fa-chevron-left"></i><label>Configuration</label></a>
+<a class="nav nav-prev" href="/userli/getting-started/commands/" title="Commands"> <i class="fa fa-chevron-left"></i><label>Commands</label></a>
     <a class="nav nav-next" href="/userli/development/documentation/" title="Documentation" style="margin-right: 0px;"><label>Documentation</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

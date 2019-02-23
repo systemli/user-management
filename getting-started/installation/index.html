@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-02-22T18:11:37 CET">
+<meta name="revised" content="2019-02-23T11:53:50 CET">
 <title>Installation :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -79,6 +79,20 @@
         <div>
           <a href="/userli/getting-started/configuration/">
             Configuration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/finalize/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/finalize/">
+            Finalize the setup
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/commands/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/commands/">
+            Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -163,7 +177,15 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#configure-prerequisites">Configure prerequisites:</a></li>
+<li><a href="#get-the-code">Get the code</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -182,6 +204,29 @@
     
     
     <p>The following steps are here to help you instal Userli.</p>
+
+<h2 id="configure-prerequisites">Configure prerequisites:</h2>
+
+<pre><code># Setup database and user
+mysql -e 'CREATE DATABASE mail'
+mysql -e 'CREATE USER `mailuser`@`localhost` IDENTIFIED BY &quot;&lt;password&gt;&quot;'
+mysql -e 'GRANT INSERT,SELECT,UPDATE ON mail.* TO `mailuser`@`localhost`'
+mysql -e 'GRANT DELETE ON mail.virtual_aliases TO `mailuser`@`localhost`'
+mysql -e 'GRANT DELETE ON mail.virtual_vouchers TO `mailuser`@`localhost`'
+</code></pre>
+
+<h2 id="get-the-code">Get the code</h2>
+
+<p>Install the <a href="https://github.com/systemli/userli/releases/latest">latest release</a>:</p>
+
+<pre><code>mkdir userli &amp;&amp; cd userli
+wget https://github.com/systemli/userli/releases/download/x.x.x/userli-x.x.x.tar.gz
+# Check signature and hash sum, if you know how to
+tar -xvzf userli-x.x.x.tar.gz
+
+# Copy .env file
+cp .env.dist .env
+</code></pre>
 
     
     

@@ -11,14 +11,14 @@
 	"title": "Getting started",
 	"tags": [],
 	"description": "",
-	"content": " Requirements  Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  "
+	"content": " Requirements  PHP \u0026gt;= 7.1 MariaDB or MySQL libsodium OpenSSL binary (for MailCrypt feature)  Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.\n Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  Finalize the setup Last steps to make Userli work properly.\n  Commands This app brings custom commands:\n  "
 },
 {
 	"uri": "/userli/getting-started/installation/",
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": "The following steps are here to help you instal Userli.\n"
+	"content": "The following steps are here to help you instal Userli.\nConfigure prerequisites: # Setup database and user mysql -e 'CREATE DATABASE mail' mysql -e 'CREATE USER `mailuser`@`localhost` IDENTIFIED BY \u0026quot;\u0026lt;password\u0026gt;\u0026quot;' mysql -e 'GRANT INSERT,SELECT,UPDATE ON mail.* TO `mailuser`@`localhost`' mysql -e 'GRANT DELETE ON mail.virtual_aliases TO `mailuser`@`localhost`' mysql -e 'GRANT DELETE ON mail.virtual_vouchers TO `mailuser`@`localhost`'  Get the code Install the latest release:\nmkdir userli \u0026amp;\u0026amp; cd userli wget https://github.com/systemli/userli/releases/download/x.x.x/userli-x.x.x.tar.gz # Check signature and hash sum, if you know how to tar -xvzf userli-x.x.x.tar.gz # Copy .env file cp .env.dist .env "
 },
 {
 	"uri": "/userli/getting-started/configuration/",
@@ -32,7 +32,21 @@
 	"title": "Development",
 	"tags": [],
 	"description": "",
-	"content": "  Documentation Built with Hugo and hosted on Github Pages\n  "
+	"content": " Requirements  Vagrant  Start Vagrant box git submodule update --init cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh # create database and schema bin/console doctrine:schema:create # load sample data bin/console doctrine:fixtures:load # get node modules yarn # update assets yarn encore dev  The doctrine:fixtures:load command will create four new accounts with corresponding roles (admin, user, support, suspicious) as well as some random aliases and vouchers. The domain for all accounts is \u0026ldquo;example.org\u0026rdquo; and the password is \u0026ldquo;password\u0026rdquo;.\nIf you want to see more details about how the users are created, see src/DataFixtures.\nVisit you local instance at http://192.168.33.99/.\nTests cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh make test   Documentation Built with Hugo and hosted on Github Pages\n  "
+},
+{
+	"uri": "/userli/getting-started/finalize/",
+	"title": "Finalize the setup",
+	"tags": [],
+	"description": "",
+	"content": "Last steps to make Userli work properly.\nCreate database scheme # Create default database schema bin/console doctrine:schema:create # Load default reserved names into database bin/console app:reservednames:import # Warm up cache bin/console cache:warmup  Cronjobs Some cronjobs are needed in order to run regular tasks:\n# Daily purge data from deleted mail users @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:users:remove -q # Daily unlink old redeemed vouchers @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:voucher:unlink # Send weekly report to admins 12 13 * * 1 userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:report:weekly "
+},
+{
+	"uri": "/userli/getting-started/commands/",
+	"title": "Commands",
+	"tags": [],
+	"description": "",
+	"content": "This app brings custom commands:\napp:munin:account # Return number of account to munin app:munin:alias # Return number of aliases to munin app:munin:voucher # Return number of vouchers to munin app:registration:mail # Send a registration mail to a user app:report:weekly # Send weekly report to all admins app:reservednames:import # Import reserved names from stdin or file app:users:check # Check if user is present app:users:mailcrypt # Get MailCrypt values for user app:users:quota # Get quota of user if set app:users:remove # Removes all mailboxes from deleted users app:voucher:create # Create voucher for a specific user app:voucher:unlink # Remove connection between vouchers and accounts after 3 months  Get more information about each command by running:\nbin/console {{ command }} --help "
 },
 {
 	"uri": "/userli/categories/",
