@@ -46,5 +46,14 @@
       <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Screenshots</title>
+      <link>/userli/getting-started/screenshots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/getting-started/screenshots/</guid>
+      <description>&lt;p&gt;Some pictures of Userli features&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

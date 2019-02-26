@@ -11,7 +11,7 @@
 	"title": "Getting started",
 	"tags": [],
 	"description": "",
-	"content": " Requirements  PHP \u0026gt;= 7.1 MariaDB or MySQL libsodium OpenSSL binary (for MailCrypt feature)  Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.\n Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  Finalize the setup Last steps to make Userli work properly.\n  Commands This app brings custom commands:\n  "
+	"content": " Requirements  PHP \u0026gt;= 7.1 MariaDB or MySQL libsodium OpenSSL binary (for MailCrypt feature)  Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.\n Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  Finalize the setup Last steps to make Userli work properly.\n  Commands This app brings custom commands:\n  Screenshots Some pictures of Userli features\n  "
 },
 {
 	"uri": "/userli/getting-started/installation/",
@@ -49,6 +49,13 @@
 	"content": "This app brings custom commands:\napp:munin:account # Return number of account to munin app:munin:alias # Return number of aliases to munin app:munin:voucher # Return number of vouchers to munin app:registration:mail # Send a registration mail to a user app:report:weekly # Send weekly report to all admins app:reservednames:import # Import reserved names from stdin or file app:users:check # Check if user is present app:users:mailcrypt # Get MailCrypt values for user app:users:quota # Get quota of user if set app:users:remove # Removes all mailboxes from deleted users app:voucher:create # Create voucher for a specific user app:voucher:unlink # Remove connection between vouchers and accounts after 3 months  Get more information about each command by running:\nbin/console {{ command }} --help "
 },
 {
+	"uri": "/userli/getting-started/screenshots/",
+	"title": "Screenshots",
+	"tags": [],
+	"description": "",
+	"content": "Some pictures of Userli features\nRecover lost password Change password and delete account Manage alias adresses Invite friends Admin Frontend "
+},
+{
 	"uri": "/userli/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -67,5 +74,5 @@
 	"title": "Userli Documentation",
 	"tags": [],
 	"description": "Web application to (self-) manage email users and encrypt their mailboxes.",
-	"content": " Userli Documentation Web application to (self-) manage email users and encrypt their mailboxes.\nFeatures  User self-service (change password/recovery token, set aliases, \u0026hellip;) Invite code system (new users get three invite codes after one week) Domain admins (accounts with admin rights for one domain) Random alias feature for users Recovery tokens to restore accounts when password got lost Support for Dovecot mailbox encryption  This is a start. Please help to improve the documentation.\n"
+	"content": " Userli Documentation Web application to (self-) manage email users and encrypt their mailboxes.\nFeatures  User self-service (change password/recovery token, set aliases, \u0026hellip;) Invite code system (new users get three invite codes after one week) Domain admins (accounts with admin rights for one domain) Random alias feature for users Recovery tokens to restore accounts when password got lost Support for Dovecot mailbox encryption Multi-language support (English and German provided)  This is a start. Please help to improve the documentation.\n"
 }]
