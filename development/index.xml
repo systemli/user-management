@@ -21,5 +21,15 @@ cd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).
 Editing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.</description>
     </item>
     
+    <item>
+      <title>Code of Conduct</title>
+      <link>/userli/development/code_of_conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/code_of_conduct/</guid>
+      <description>Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
+    </item>
+    
   </channel>
 </rss>
