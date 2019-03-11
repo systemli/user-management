@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-03-03T20:12:38 CET">
-<title>Screenshots :: Userli Documentation</title>
+<meta name="revised" content="2019-03-11T09:43:03 CET">
+<title>Coding style :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/userli/getting-started/screenshots/">
+  <body data-url="/userli/development/coding_style/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -61,7 +61,7 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/userli/getting-started/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/userli/getting-started/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/userli/getting-started/">Getting started</a>
@@ -96,19 +96,27 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/screenshots/" class="dd-item active">
+      <li data-nav-id="/userli/getting-started/checkpassword/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/screenshots/">
-            Screenshots
+          <a href="/userli/getting-started/checkpassword/">
+            Checkpassword
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/customize/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/customize/">
+            Customize
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/development/" class="dd-item haschildren
+    <li data-nav-id="/userli/development/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/userli/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/development/">Development</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/development/documentation/" class="dd-item">
@@ -125,7 +133,49 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/userli/development/release/" class="dd-item">
+        <div>
+          <a href="/userli/development/release/">
+            Creating release tarballs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/development/coding_style/" class="dd-item active">
+        <div>
+          <a href="/userli/development/coding_style/">
+            Coding style
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
+    </li>
+    <li data-nav-id="/userli/mail_crypt/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/userli/mail_crypt/">MailCrypt</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/userli/mail_crypt/legacy/" class="dd-item">
+        <div>
+          <a href="/userli/mail_crypt/legacy/">
+            Migrating legacy users
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/mail_crypt/details/" class="dd-item">
+        <div>
+          <a href="/userli/mail_crypt/details/">
+            Implementation details
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/userli/screenshots/" class="dd-item
+        ">
+      <div>
+      <a href="/userli/screenshots/">Screenshots</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
     </li>
 
 
@@ -158,7 +208,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/getting-started/screenshots.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/development/coding_style.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -178,7 +228,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/getting-started/'>Getting started</a> > Screenshots
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/development/'>Development</a> > Coding style
 
  
 
@@ -191,21 +241,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#recover-lost-password">Recover lost password</a></li>
-<li><a href="#change-password-and-delete-account">Change password and delete account</a></li>
-<li><a href="#manage-alias-adresses">Manage alias adresses</a></li>
-<li><a href="#invite-friends">Invite friends</a></li>
-<li><a href="#admin-frontend">Admin Frontend</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -215,7 +251,7 @@
 
 <div id="body-inner">
   
-    <h1>Screenshots</h1>
+    <h1>Coding style</h1>
   
 
 
@@ -223,28 +259,12 @@
     
     
     
-    <p>Some pictures of Userli features</p>
+    <p>We use the default Symfony coding style.</p>
 
-<h3 id="recover-lost-password">Recover lost password</h3>
+<p>Check and adjust coding style by running <code>php-cs-fixer</code>:</p>
 
-<p><img src="../../images/manage_recovery_token.png" alt="manage_recovery_token" />
-<img src="../../images/new_recovery_token.png" alt="new_recovery_token" /></p>
-
-<h3 id="change-password-and-delete-account">Change password and delete account</h3>
-
-<p><img src="../../images/account.png" alt="account" /></p>
-
-<h3 id="manage-alias-adresses">Manage alias adresses</h3>
-
-<p><img src="../../images/alias.png" alt="alias" /></p>
-
-<h3 id="invite-friends">Invite friends</h3>
-
-<p><img src="../../images/voucher.png" alt="voucher" /></p>
-
-<h3 id="admin-frontend">Admin Frontend</h3>
-
-<p><img src="../../images/admin.png" alt="admin" /></p>
+<pre><code>make cs-fixer
+</code></pre>
 
     
     
@@ -255,8 +275,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/commands/" title="Commands"> <i class="fa fa-chevron-left"></i><label>Commands</label></a>
-    <a class="nav nav-next" href="/userli/development/" title="Development" style="margin-right: 0px;"><label>Development</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/development/release/" title="Creating release tarballs"> <i class="fa fa-chevron-left"></i><label>Creating release tarballs</label></a>
+    <a class="nav nav-next" href="/userli/mail_crypt/" title="MailCrypt" style="margin-right: 0px;"><label>MailCrypt</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

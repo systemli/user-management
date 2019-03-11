@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-03-11T09:43:03 CET">
-<title>Development :: Userli Documentation</title>
+<title>Implementation details :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+<meta name="description" content="Cryptographic primitives">
 
 
     
   </head>
-  <body data-url="/userli/development/">
+  <body data-url="/userli/mail_crypt/details/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -112,11 +112,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/development/" class="dd-item parent active haschildren
+    <li data-nav-id="/userli/development/" class="dd-item haschildren
         ">
       <div>
-      <a href="/userli/development/">Development</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/development/documentation/" class="dd-item">
@@ -149,10 +148,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/mail_crypt/" class="dd-item haschildren
+    <li data-nav-id="/userli/mail_crypt/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/userli/mail_crypt/">MailCrypt</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/mail_crypt/">MailCrypt</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/mail_crypt/legacy/" class="dd-item">
@@ -162,7 +162,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/mail_crypt/details/" class="dd-item">
+      <li data-nav-id="/userli/mail_crypt/details/" class="dd-item active">
         <div>
           <a href="/userli/mail_crypt/details/">
             Implementation details
@@ -208,7 +208,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/development/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/mail_crypt/details.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -225,7 +225,12 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > Development
+
+
+
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/mail_crypt/'>MailCrypt</a> > Implementation details
+
+ 
 
  
 
@@ -236,16 +241,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#start-vagrant-box">Start Vagrant box</a></li>
-<li><a href="#tests">Tests</a></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -255,7 +251,7 @@
 
 <div id="body-inner">
   
-    <h1>Development</h1>
+    <h1>Implementation details</h1>
   
 
 
@@ -263,79 +259,13 @@
     
     
     
+    <p>We use elliptic curve keys with curve secp521r1. The private key is encrypted
+with a libargon2i hash of the users&rsquo; password, stored in a libsodium secret
+box.</p>
 
-
-
-<h2 id="requirements">Requirements</h2>
-
-<ul>
-<li><a href="https://vagrantup.com/">Vagrant</a></li>
-</ul>
-
-<h2 id="start-vagrant-box">Start Vagrant box</h2>
-
-<pre><code>git submodule update --init
-cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
-
-# create database and schema
-bin/console doctrine:schema:create
-
-# load sample data
-bin/console doctrine:fixtures:load
-
-# get node modules
-yarn
-
-# update assets
-yarn encore dev
-</code></pre>
-
-<p>The <code>doctrine:fixtures:load</code> command will create four new accounts with
-corresponding roles (<code>admin</code>, <code>user</code>, <code>support</code>, <code>suspicious</code>) as well
-as some random aliases and vouchers. The domain for all accounts is
-&ldquo;example.org&rdquo; and the password is &ldquo;password&rdquo;.</p>
-
-<p>If you want to see more details about how the users are created, see
-<code>src/DataFixtures</code>.</p>
-
-<p>Visit you local instance at <a href="http://192.168.33.99/">http://192.168.33.99/</a>.</p>
-
-<h2 id="tests">Tests</h2>
-
-<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
-make test
-</code></pre>
-
-
-
-<ul class="children children-h2">
-
-<span><h2>
-		<a href="/userli/development/documentation/" >Documentation</a></h2>
-<p>Built with Hugo and hosted on Github Pages</p>
-</span>
-
-<span><h2>
-		<a href="/userli/development/code_of_conduct/" >Code of Conduct</a></h2>
-<p>Everyone welcome</p>
-</span>
-
-<span><h2>
-		<a href="/userli/development/release/" >Creating release tarballs</a></h2>
-<p><p>Release tarballs are the preferred way to install Userli. This page explains how to create them.</p></p>
-</span>
-
-<span><h2>
-		<a href="/userli/development/coding_style/" >Coding style</a></h2>
-<p><p>We use the default Symfony coding style.</p></p>
-</span>
-</ul>
-
-
-
-
-
-
+<p>A second copy of the private key is stored encrypted with a libargon2i hash of
+the users&rsquo; recovery token, to be used when a user restores their account after
+they lost their password.</p>
 
 
     
@@ -347,8 +277,8 @@ make test
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/customize/" title="Customize"> <i class="fa fa-chevron-left"></i><label>Customize</label></a>
-    <a class="nav nav-next" href="/userli/development/documentation/" title="Documentation" style="margin-right: 0px;"><label>Documentation</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/mail_crypt/legacy/" title="Migrating legacy users"> <i class="fa fa-chevron-left"></i><label>Migrating legacy users</label></a>
+    <a class="nav nav-next" href="/userli/screenshots/" title="Screenshots" style="margin-right: 0px;"><label>Screenshots</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -31,5 +31,23 @@ Editing Change files in hugo/content to edit the documentation. See the DocDock 
 Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
     </item>
     
+    <item>
+      <title>Creating release tarballs</title>
+      <link>/userli/development/release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/release/</guid>
+      <description>&lt;p&gt;Release tarballs are the preferred way to install Userli. This page explains how to create them.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coding style</title>
+      <link>/userli/development/coding_style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/coding_style/</guid>
+      <description>&lt;p&gt;We use the default Symfony coding style.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

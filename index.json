@@ -11,7 +11,7 @@
 	"title": "Getting started",
 	"tags": [],
 	"description": "",
-	"content": " Requirements  PHP \u0026gt;= 7.1 MariaDB or MySQL libsodium OpenSSL binary (for MailCrypt feature)  Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.\n Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  Finalize the setup Last steps to make Userli work properly.\n  Commands This app brings custom commands:\n  Screenshots Some pictures of Userli features\n  "
+	"content": " Requirements  PHP \u0026gt;= 7.1 MariaDB or MySQL libsodium OpenSSL binary (for MailCrypt feature)  Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.\n Installation The following steps are here to help you instal Userli.\n  Configuration Adjust the default values by creating a .env file.\n  Finalize the setup Last steps to make Userli work properly.\n  Commands This app brings custom commands:\n  Checkpassword The console command bin/checkpassword is a checkpassword command to be used for authentication (userdb and passdb lookup) by external services. So far, it\u0026rsquo;s only tested with Dovecot\n  Customize You can override translation strings individually by putting them into override localization files at translations/\u0026lt;lang\u0026gt;/messages.\u0026lt;lang\u0026gt;.yml.\n  "
 },
 {
 	"uri": "/userli/getting-started/installation/",
@@ -19,6 +19,13 @@
 	"tags": [],
 	"description": "",
 	"content": "The following steps are here to help you instal Userli.\nConfigure prerequisites: # Setup database and user mysql -e 'CREATE DATABASE mail' mysql -e 'CREATE USER `mailuser`@`localhost` IDENTIFIED BY \u0026quot;\u0026lt;password\u0026gt;\u0026quot;' mysql -e 'GRANT INSERT,SELECT,UPDATE ON mail.* TO `mailuser`@`localhost`' mysql -e 'GRANT DELETE ON mail.virtual_aliases TO `mailuser`@`localhost`' mysql -e 'GRANT DELETE ON mail.virtual_vouchers TO `mailuser`@`localhost`'  Get the code Install the latest release:\nmkdir userli \u0026amp;\u0026amp; cd userli wget https://github.com/systemli/userli/releases/download/x.x.x/userli-x.x.x.tar.gz # Check signature and hash sum, if you know how to tar -xvzf userli-x.x.x.tar.gz # Copy .env file cp .env.dist .env "
+},
+{
+	"uri": "/userli/mail_crypt/legacy/",
+	"title": "Migrating legacy users",
+	"tags": [],
+	"description": "",
+	"content": "Legacy users (without MailCrypt keys) continue to work without mailbox encryption. If they generate a recovery token manually in the account settings, a MailCrypt key pair gets created for them. This doesn\u0026rsquo;t enable MailCrypt for them automatically, though.\nIn order to enable MailCrypt for a legacy user, do the following:\n Ensure that they have a recovery token generated. This will automatically generate MailCrypt key pair as well. This step can only be done by the account holder, as the user password is required to do so. Manually set mailCrypt=1 for the user in the virtual_users database table. This needs to be done manually on a per-user basis on purpose.  Please note that existing mails will not be encrypted automatically. Instead, all existing mail stays unencrypted and only new incoming mail will be stored encrypted.\nThe following SQL statement can be used to enable MailCrypt for all legacy users that generated a recovery token in the meantime (and thus have a MailCrypt key). Use with caution!\nUPDATE virtual_users SET mailCrypt=1 WHERE recoverySecretBox IS NOT NULL AND mailCryptSecretBox IS NOT NULL;  We might add a migration script to encrypt old mails from existing users at a later point.\n"
 },
 {
 	"uri": "/userli/development/code_of_conduct/",
@@ -39,7 +46,28 @@
 	"title": "Development",
 	"tags": [],
 	"description": "",
-	"content": " Requirements  Vagrant  Start Vagrant box git submodule update --init cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh # create database and schema bin/console doctrine:schema:create # load sample data bin/console doctrine:fixtures:load # get node modules yarn # update assets yarn encore dev  The doctrine:fixtures:load command will create four new accounts with corresponding roles (admin, user, support, suspicious) as well as some random aliases and vouchers. The domain for all accounts is \u0026ldquo;example.org\u0026rdquo; and the password is \u0026ldquo;password\u0026rdquo;.\nIf you want to see more details about how the users are created, see src/DataFixtures.\nVisit you local instance at http://192.168.33.99/.\nTests cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh make test   Documentation Built with Hugo and hosted on Github Pages\n  Code of Conduct Everyone welcome\n  "
+	"content": " Requirements  Vagrant  Start Vagrant box git submodule update --init cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh # create database and schema bin/console doctrine:schema:create # load sample data bin/console doctrine:fixtures:load # get node modules yarn # update assets yarn encore dev  The doctrine:fixtures:load command will create four new accounts with corresponding roles (admin, user, support, suspicious) as well as some random aliases and vouchers. The domain for all accounts is \u0026ldquo;example.org\u0026rdquo; and the password is \u0026ldquo;password\u0026rdquo;.\nIf you want to see more details about how the users are created, see src/DataFixtures.\nVisit you local instance at http://192.168.33.99/.\nTests cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh make test   Documentation Built with Hugo and hosted on Github Pages\n  Code of Conduct Everyone welcome\n  Creating release tarballs Release tarballs are the preferred way to install Userli. This page explains how to create them.\n  Coding style We use the default Symfony coding style.\n  "
+},
+{
+	"uri": "/userli/mail_crypt/details/",
+	"title": "Implementation details",
+	"tags": [],
+	"description": "Cryptographic primitives",
+	"content": "We use elliptic curve keys with curve secp521r1. The private key is encrypted with a libargon2i hash of the users\u0026rsquo; password, stored in a libsodium secret box.\nA second copy of the private key is stored encrypted with a libargon2i hash of the users\u0026rsquo; recovery token, to be used when a user restores their account after they lost their password.\n"
+},
+{
+	"uri": "/userli/mail_crypt/",
+	"title": "MailCrypt",
+	"tags": [],
+	"description": "",
+	"content": "The software has builtin support for Dovecot\u0026rsquo;s mailbox encryption, using the global keys mode. Keys are created and maintained by userli and handed over to Dovecot via checkpassword script.\nThe MailCrypt feature is enabled per default and can optionally be switched off globally by setting MAIL_CRYPT_ENABLE=0 in the dotenv (.env) file.\nIf you want to enable MailCrypt for some users, but don\u0026rsquo;t want new users to have MailCrypt enabled per default, you can set MAIL_CRYPT_AUTO=0 in the dotenv (.env) file.\nIn order to enable MailCrypt in Dovecot, the following is required:\n Add mail_crypt to the mail_plugins list in /etc/dovecot/conf.d/10-mail.conf Set mail_crypt_save_version = 0 in /etc/dovecot/conf.d/90-mail-crypt.conf  The latter disables MailCrypt per default and is necessary to not break incoming mail for legacy users without MailCrypt keys. The checkpassword script automatically sets mail_crypt_save_version = 2 for all users with MailCrypt keys.\nMailCrypt can be turned on/off for individual users by setting the mailCrypt switch in the virtual_users database table. This switch is mainly meant to provide a migration path from legacy users without MailCrypt keys. On new setups, it\u0026rsquo;s recommended to keep MailCrypt enabled for all users.\n Migrating legacy users Legacy users (without MailCrypt keys) continue to work without mailbox encryption. If they generate a recovery token manually in the account settings, a MailCrypt key pair gets created for them. This doesn\u0026rsquo;t enable MailCrypt for them automatically, though.\n  Implementation details Cryptographic primitives\n  "
+},
+{
+	"uri": "/userli/development/release/",
+	"title": "Creating release tarballs",
+	"tags": [],
+	"description": "",
+	"content": "Release tarballs are the preferred way to install Userli. This page explains how to create them.\nFirst, you\u0026rsquo;ll need a Github API token. The token needs the following priviledges:\npublic_repo, repo:status, repo_deployment  Now, execute the following script. It will create a version tag, release and copy the info from CHANGELOG.md to the release info.\n$ GITHUB_API_TOKEN=\u0026lt;token\u0026gt; GPG_SIGN_KEY=\u0026quot;\u0026lt;key_id\u0026gt;\u0026quot; ./bin/github-release.sh \u0026lt;version\u0026gt; "
 },
 {
 	"uri": "/userli/getting-started/finalize/",
@@ -49,6 +77,13 @@
 	"content": "Last steps to make Userli work properly.\nCreate database scheme # Create default database schema bin/console doctrine:schema:create # Load default reserved names into database bin/console app:reservednames:import # Warm up cache bin/console cache:warmup  Cronjobs Some cronjobs are needed in order to run regular tasks:\n# Daily purge data from deleted mail users @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:users:remove -q # Daily unlink old redeemed vouchers @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:voucher:unlink # Send weekly report to admins 12 13 * * 1 userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:report:weekly "
 },
 {
+	"uri": "/userli/development/coding_style/",
+	"title": "Coding style",
+	"tags": [],
+	"description": "",
+	"content": "We use the default Symfony coding style.\nCheck and adjust coding style by running php-cs-fixer:\nmake cs-fixer "
+},
+{
 	"uri": "/userli/getting-started/commands/",
 	"title": "Commands",
 	"tags": [],
@@ -56,11 +91,18 @@
 	"content": "This app brings custom commands:\napp:munin:account # Return number of account to munin app:munin:alias # Return number of aliases to munin app:munin:voucher # Return number of vouchers to munin app:registration:mail # Send a registration mail to a user app:report:weekly # Send weekly report to all admins app:reservednames:import # Import reserved names from stdin or file app:users:check # Check if user is present app:users:mailcrypt # Get MailCrypt values for user app:users:quota # Get quota of user if set app:users:remove # Removes all mailboxes from deleted users app:voucher:create # Create voucher for a specific user app:voucher:unlink # Remove connection between vouchers and accounts after 3 months  Get more information about each command by running:\nbin/console {{ command }} --help "
 },
 {
-	"uri": "/userli/getting-started/screenshots/",
-	"title": "Screenshots",
+	"uri": "/userli/getting-started/checkpassword/",
+	"title": "Checkpassword",
 	"tags": [],
 	"description": "",
-	"content": "Some pictures of Userli features\nRecover lost password Change password and delete account Manage alias adresses Invite friends Admin Frontend "
+	"content": "The console command bin/checkpassword is a checkpassword command to be used for authentication (userdb and passdb lookup) by external services. So far, it\u0026rsquo;s only tested with Dovecot\nIn order to use the userli checkpassword command with Dovecot (\u0026lt; 2.3), the default_vsz_limit (defaults to 256MB) needs to be raised in the Dovecot configuration. Starting with Dovecot 2.3, the default is 1G.\nExample configuration for using checkpassword in Dovecot:\n/etc/dovecot/conf.d/auth-checkpassword.conf.ext:\npassdb { driver = checkpassword args = /path/to/userli/bin/checkpassword } userdb { driver = prefetch } userdb { driver = checkpassword args = /path/to/userli/bin/checkpassword } "
+},
+{
+	"uri": "/userli/getting-started/customize/",
+	"title": "Customize",
+	"tags": [],
+	"description": "",
+	"content": "You can override translation strings individually by putting them into override localization files at translations/\u0026lt;lang\u0026gt;/messages.\u0026lt;lang\u0026gt;.yml.\n"
 },
 {
 	"uri": "/userli/categories/",
@@ -68,6 +110,13 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/userli/screenshots/",
+	"title": "Screenshots",
+	"tags": [],
+	"description": "",
+	"content": "Some pictures of Userli features\nRecover lost password Change password and delete account Manage alias adresses Invite friends Admin Frontend "
 },
 {
 	"uri": "/userli/tags/",
@@ -81,5 +130,5 @@
 	"title": "Userli Documentation",
 	"tags": [],
 	"description": "Web application to (self-) manage email users and encrypt their mailboxes.",
-	"content": " Userli Documentation Web application to (self-) manage email users and encrypt their mailboxes.\nFeatures  User self-service (change password/recovery token, set aliases, \u0026hellip;) Invite code system (new users get three invite codes after one week) Domain admins (accounts with admin rights for one domain) Random alias feature for users Recovery tokens to restore accounts when password got lost Support for Dovecot mailbox encryption Multi-language support (English and German provided)  This is a start. Please help to improve the documentation.\n"
+	"content": " Userli Web application to (self-) manage email users and encrypt their mailboxes.\nFeatures  User self-service (change password/recovery token, set aliases, \u0026hellip;) Invite code system (new users get three invite codes after one week) Domain admins (accounts with admin rights for one domain) Random alias feature for users Recovery tokens to restore accounts when password got lost Support for Dovecot mailbox encryption Multi-language support (English and German provided)  This is a start. Please help to improve the documentation.\n"
 }]

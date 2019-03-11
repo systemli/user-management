@@ -47,12 +47,23 @@
     </item>
     
     <item>
-      <title>Screenshots</title>
-      <link>/userli/getting-started/screenshots/</link>
+      <title>Checkpassword</title>
+      <link>/userli/getting-started/checkpassword/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/screenshots/</guid>
-      <description>&lt;p&gt;Some pictures of Userli features&lt;/p&gt;</description>
+      <guid>/userli/getting-started/checkpassword/</guid>
+      <description>&lt;p&gt;The console command &lt;code&gt;bin/checkpassword&lt;/code&gt; is a checkpassword command
+to be used for authentication (userdb and passdb lookup) by external services.
+So far, it&amp;rsquo;s only tested with Dovecot&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Customize</title>
+      <link>/userli/getting-started/customize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/getting-started/customize/</guid>
+      <description>You can override translation strings individually by putting them into override localization files at translations/&amp;lt;lang&amp;gt;/messages.&amp;lt;lang&amp;gt;.yml.</description>
     </item>
     
   </channel>
