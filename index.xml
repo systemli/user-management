@@ -43,6 +43,24 @@ them automatically, though.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Recover lost password</title>
+      <link>/userli/screenshots/recovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/recovery/</guid>
+      <description>&lt;p&gt;Create and use recovery codes&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Account management</title>
+      <link>/userli/screenshots/account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/account/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Code of Conduct</title>
       <link>/userli/development/code_of_conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -72,6 +90,15 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     </item>
     
     <item>
+      <title>Alias addresses</title>
+      <link>/userli/screenshots/alias/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Creating release tarballs</title>
       <link>/userli/development/release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -90,6 +117,15 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     </item>
     
     <item>
+      <title>Admin Frontend</title>
+      <link>/userli/screenshots/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/admin/</guid>
+      <description>&lt;p&gt;Manage domains, users, aliases and more&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Coding style</title>
       <link>/userli/development/coding_style/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -105,6 +141,15 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
       
       <guid>/userli/getting-started/commands/</guid>
       <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Invite friends</title>
+      <link>/userli/screenshots/voucher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/voucher/</guid>
+      <description></description>
     </item>
     
     <item>

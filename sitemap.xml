@@ -19,6 +19,14 @@
   </url>
   
   <url>
+    <loc>/userli/screenshots/recovery/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/screenshots/account/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/development/code_of_conduct/</loc>
   </url>
   
@@ -39,6 +47,10 @@
   </url>
   
   <url>
+    <loc>/userli/screenshots/alias/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/development/release/</loc>
   </url>
   
@@ -47,11 +59,19 @@
   </url>
   
   <url>
+    <loc>/userli/screenshots/admin/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/development/coding_style/</loc>
   </url>
   
   <url>
     <loc>/userli/getting-started/commands/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/screenshots/voucher/</loc>
   </url>
   
   <url>

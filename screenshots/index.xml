@@ -10,5 +10,50 @@
 	<atom:link href="/userli/screenshots/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Recover lost password</title>
+      <link>/userli/screenshots/recovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/recovery/</guid>
+      <description>&lt;p&gt;Create and use recovery codes&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Account management</title>
+      <link>/userli/screenshots/account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/account/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alias addresses</title>
+      <link>/userli/screenshots/alias/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Admin Frontend</title>
+      <link>/userli/screenshots/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/admin/</guid>
+      <description>&lt;p&gt;Manage domains, users, aliases and more&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Invite friends</title>
+      <link>/userli/screenshots/voucher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/screenshots/voucher/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

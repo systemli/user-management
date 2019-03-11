@@ -28,6 +28,20 @@
 	"content": "Legacy users (without MailCrypt keys) continue to work without mailbox encryption. If they generate a recovery token manually in the account settings, a MailCrypt key pair gets created for them. This doesn\u0026rsquo;t enable MailCrypt for them automatically, though.\nIn order to enable MailCrypt for a legacy user, do the following:\n Ensure that they have a recovery token generated. This will automatically generate MailCrypt key pair as well. This step can only be done by the account holder, as the user password is required to do so. Manually set mailCrypt=1 for the user in the virtual_users database table. This needs to be done manually on a per-user basis on purpose.  Please note that existing mails will not be encrypted automatically. Instead, all existing mail stays unencrypted and only new incoming mail will be stored encrypted.\nThe following SQL statement can be used to enable MailCrypt for all legacy users that generated a recovery token in the meantime (and thus have a MailCrypt key). Use with caution!\nUPDATE virtual_users SET mailCrypt=1 WHERE recoverySecretBox IS NOT NULL AND mailCryptSecretBox IS NOT NULL;  We might add a migration script to encrypt old mails from existing users at a later point.\n"
 },
 {
+	"uri": "/userli/screenshots/recovery/",
+	"title": "Recover lost password",
+	"tags": [],
+	"description": "",
+	"content": "Create and use recovery codes\n"
+},
+{
+	"uri": "/userli/screenshots/account/",
+	"title": "Account management",
+	"tags": [],
+	"description": "Change password and delete account",
+	"content": ""
+},
+{
 	"uri": "/userli/development/code_of_conduct/",
 	"title": "Code of Conduct",
 	"tags": [],
@@ -63,6 +77,13 @@
 	"content": "The software has builtin support for Dovecot\u0026rsquo;s mailbox encryption, using the global keys mode. Keys are created and maintained by userli and handed over to Dovecot via checkpassword script.\nThe MailCrypt feature is enabled per default and can optionally be switched off globally by setting MAIL_CRYPT_ENABLE=0 in the dotenv (.env) file.\nIf you want to enable MailCrypt for some users, but don\u0026rsquo;t want new users to have MailCrypt enabled per default, you can set MAIL_CRYPT_AUTO=0 in the dotenv (.env) file.\nIn order to enable MailCrypt in Dovecot, the following is required:\n Add mail_crypt to the mail_plugins list in /etc/dovecot/conf.d/10-mail.conf Set mail_crypt_save_version = 0 in /etc/dovecot/conf.d/90-mail-crypt.conf  The latter disables MailCrypt per default and is necessary to not break incoming mail for legacy users without MailCrypt keys. The checkpassword script automatically sets mail_crypt_save_version = 2 for all users with MailCrypt keys.\nMailCrypt can be turned on/off for individual users by setting the mailCrypt switch in the virtual_users database table. This switch is mainly meant to provide a migration path from legacy users without MailCrypt keys. On new setups, it\u0026rsquo;s recommended to keep MailCrypt enabled for all users.\n Migrating legacy users Legacy users (without MailCrypt keys) continue to work without mailbox encryption. If they generate a recovery token manually in the account settings, a MailCrypt key pair gets created for them. This doesn\u0026rsquo;t enable MailCrypt for them automatically, though.\n  Implementation details Cryptographic primitives\n  "
 },
 {
+	"uri": "/userli/screenshots/alias/",
+	"title": "Alias addresses",
+	"tags": [],
+	"description": "Manage alias addresses",
+	"content": ""
+},
+{
 	"uri": "/userli/development/release/",
 	"title": "Creating release tarballs",
 	"tags": [],
@@ -77,6 +98,13 @@
 	"content": "Last steps to make Userli work properly.\nCreate database scheme # Create default database schema bin/console doctrine:schema:create # Load default reserved names into database bin/console app:reservednames:import # Warm up cache bin/console cache:warmup  Cronjobs Some cronjobs are needed in order to run regular tasks:\n# Daily purge data from deleted mail users @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:users:remove -q # Daily unlink old redeemed vouchers @daily userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:voucher:unlink # Send weekly report to admins 12 13 * * 1 userli cd /path/to/userli \u0026amp;\u0026amp; bin/console app:report:weekly "
 },
 {
+	"uri": "/userli/screenshots/admin/",
+	"title": "Admin Frontend",
+	"tags": [],
+	"description": "",
+	"content": "Manage domains, users, aliases and more\n"
+},
+{
 	"uri": "/userli/development/coding_style/",
 	"title": "Coding style",
 	"tags": [],
@@ -89,6 +117,13 @@
 	"tags": [],
 	"description": "",
 	"content": "This app brings custom commands:\napp:munin:account # Return number of account to munin app:munin:alias # Return number of aliases to munin app:munin:voucher # Return number of vouchers to munin app:registration:mail # Send a registration mail to a user app:report:weekly # Send weekly report to all admins app:reservednames:import # Import reserved names from stdin or file app:users:check # Check if user is present app:users:mailcrypt # Get MailCrypt values for user app:users:quota # Get quota of user if set app:users:remove # Removes all mailboxes from deleted users app:voucher:create # Create voucher for a specific user app:voucher:unlink # Remove connection between vouchers and accounts after 3 months  Get more information about each command by running:\nbin/console {{ command }} --help "
+},
+{
+	"uri": "/userli/screenshots/voucher/",
+	"title": "Invite friends",
+	"tags": [],
+	"description": "Invite codes",
+	"content": ""
 },
 {
 	"uri": "/userli/getting-started/checkpassword/",
@@ -116,7 +151,7 @@
 	"title": "Screenshots",
 	"tags": [],
 	"description": "",
-	"content": "Some pictures of Userli features\nRecover lost password Change password and delete account Manage alias adresses Invite friends Admin Frontend "
+	"content": "Some screenshots of Userli features\n Recover lost password Create and use recovery codes\n  Account management Change password and delete account\n  Alias addresses Manage alias addresses\n  Admin Frontend Manage domains, users, aliases and more\n  Invite friends Invite codes\n  "
 },
 {
 	"uri": "/userli/tags/",
