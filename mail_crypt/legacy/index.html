@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-03-11T10:17:26 CET">
+<meta name="revised" content="2019-03-17T12:36:16 CET">
 <title>Migrating legacy users :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -314,6 +314,14 @@ table. This needs to be done manually on a per-user basis on purpose.</li>
 <p>Please note that existing mails will not be encrypted automatically. Instead,
 all existing mail stays unencrypted and only new incoming mail will be stored
 encrypted.</p>
+
+<p>In <code>bin/mailcrypt-encrypt-maildir</code> you find a script to encrypt unencrypted
+mail from legacy mailboxes that already have a MailCrypt key configured. This
+script needs to be invoked as a user who has write access to the mailbox in
+question - probably the best is to run it as root:</p>
+
+<pre><code>./bin/mailcrypt-encrypt-maildir user@example.org
+</code></pre>
 
 <p>The following SQL statement can be used to enable MailCrypt for all legacy
 users that generated a recovery token in the meantime (and thus have a
