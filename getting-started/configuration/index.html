@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-03-17T12:36:16 CET">
+<meta name="revised" content="2019-04-03T11:27:34 CEST">
 <title>Configuration :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -107,6 +107,13 @@
         <div>
           <a href="/userli/getting-started/customize/">
             Customize
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/getting-started/webserver/" class="dd-item">
+        <div>
+          <a href="/userli/getting-started/webserver/">
+            Webserver
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -302,7 +309,7 @@ the following values.</p>
 <pre><code>APP_ENV=prod
 APP_SECRET=&lt;random secret string&gt;
 APP_URL=https://users.example.org
-DATABASE_URL=mysql://mailuser:&lt;password&gt;@127.0.0.1:3306/mail
+DATABASE_URL=mysql://userli:&lt;password&gt;@127.0.0.1:3306/userli
 MAILER_URL=smtp://localhost:25?encryption=&amp;auth_mode=
 PROJECT_NAME=example.org
 PROJECT_URL=https://www.example.org

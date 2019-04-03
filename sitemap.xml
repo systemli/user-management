@@ -83,6 +83,10 @@
   </url>
   
   <url>
+    <loc>/userli/getting-started/webserver/</loc>
+  </url>
+  
+  <url>
     <loc>/userli/categories/</loc>
     <priority>0</priority>
   </url>
