@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-04-03T11:27:34 CEST">
-<title>Webserver :: Userli Documentation</title>
+<meta name="revised" content="2019-04-04T09:29:04 CEST">
+<title>Installation :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/userli/getting-started/webserver/">
+  <body data-url="/userli/installation/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -61,58 +61,64 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/userli/getting-started/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/userli/getting-started/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/userli/getting-started/">Getting started</a>
+      <a href="/userli/getting-started/">Quick Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/userli/installation/" class="dd-item parent active haschildren
+        ">
+      <div>
+      <a href="/userli/installation/">Installation</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/getting-started/installation/" class="dd-item">
+      <li data-nav-id="/userli/installation/installation/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/installation/">
+          <a href="/userli/installation/installation/">
             Installation
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/configuration/" class="dd-item">
+      <li data-nav-id="/userli/installation/configuration/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/configuration/">
+          <a href="/userli/installation/configuration/">
             Configuration
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/finalize/" class="dd-item">
+      <li data-nav-id="/userli/installation/finalize/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/finalize/">
+          <a href="/userli/installation/finalize/">
             Finalize the setup
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/commands/" class="dd-item">
+      <li data-nav-id="/userli/installation/commands/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/commands/">
+          <a href="/userli/installation/commands/">
             Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/checkpassword/" class="dd-item">
+      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/checkpassword/">
+          <a href="/userli/installation/checkpassword/">
             Checkpassword
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/customize/" class="dd-item">
+      <li data-nav-id="/userli/installation/customize/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/customize/">
+          <a href="/userli/installation/customize/">
             Customize
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/webserver/" class="dd-item active">
+      <li data-nav-id="/userli/installation/webserver/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/webserver/">
+          <a href="/userli/installation/webserver/">
             Webserver
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
@@ -251,7 +257,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/getting-started/webserver.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/installation/_index.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -268,12 +274,7 @@
 
 
 
-
-
-
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/getting-started/'>Getting started</a> > Webserver
-
- 
+ <a href='/userli/'>Userli Documentation</a> > Installation
 
  
 
@@ -284,7 +285,14 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#requirements">Requirements</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -294,7 +302,7 @@
 
 <div id="body-inner">
   
-    <h1>Webserver</h1>
+    <h1>Installation</h1>
   
 
 
@@ -302,122 +310,71 @@
     
     
     
-    <p>Userli has to be installed like an other Symfony application.</p>
 
-<p>Below, you&rsquo;ll find some example configurations for webservers.
-Don&rsquo;t blindly copy them, but adjust them to your needs.</p>
 
-<p>Caddy</p>
 
-<pre><code>:8080
-gzip
-root /var/www/userli/public
-# PHP-FPM Configuration
-fastcgi / /run/php/php7.1-fpm.sock php
-rewrite {
-  to {path} /index.php?{query}
-}
-</code></pre>
+<h2 id="requirements">Requirements</h2>
 
-<p>Nginx</p>
+<ul>
+<li>Webserver (e.g <a href="https://caddyserver.com/">Caddy</a>)</li>
+<li><a href="https://secure.php.net/">PHP &gt;= 7.1</a></li>
+<li><a href="https://mariadb.org/">MariaDB</a> or <a href="https://mysql.com/">MySQL</a></li>
+<li><a href="https://download.libsodium.org/doc/">libsodium</a></li>
+<li><a href="https://www.openssl.org/">OpenSSL</a> binary (for MailCrypt feature)</li>
+</ul>
 
-<pre><code>server {
-    listen  80;
+<p>Libsodium is already included in PHP 7.2. You can also run this application with PostgreSQL oder SQLite.</p>
 
-    root /vagrant/public;
-    index index.php;
 
-    location / {
-        try_files $uri /index.php$is_args$args;
-    }
 
-    error_page 404 /404.html;
+<ul class="children children-h2">
 
-    error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-        root /usr/share/nginx/www;
-    }
+<span><h2>
+		<a href="/userli/installation/installation/" >Installation</a></h2>
+<p><p>The following steps are here to help you instal Userli.</p></p>
+</span>
 
-    location ~ ^/index\.php(/|$) {
-        fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
-        include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        fastcgi_param HTTPS off;
-    }
-}
-</code></pre>
+<span><h2>
+		<a href="/userli/installation/configuration/" >Configuration</a></h2>
+<p><p>You can personalize your Userli instance by creating <code>.env.local</code>,
+which overrides some values from <code>.env</code>. You should at least configure
+the following values.</p></p>
+</span>
 
-<p>Apache2</p>
+<span><h2>
+		<a href="/userli/installation/finalize/" >Finalize the setup</a></h2>
+<p><p>Last steps to make Userli work properly.</p></p>
+</span>
 
-<pre><code>&lt;VirtualHost *:80&gt;
+<span><h2>
+		<a href="/userli/installation/commands/" >Commands</a></h2>
+<p><p>This app brings custom commands:</p></p>
+</span>
 
-    ServerName users.example.org
-    ServerAdmin admin@example.org
-    RewriteEngine On
-    RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [NE,R,L]
+<span><h2>
+		<a href="/userli/installation/checkpassword/" >Checkpassword</a></h2>
+<p><p>The console command <code>bin/checkpassword</code> is a checkpassword command
+to be used for authentication (userdb and passdb lookup) by external services.
+So far, it&rsquo;s only tested with Dovecot.</p></p>
+</span>
 
-&lt;/VirtualHost&gt;
+<span><h2>
+		<a href="/userli/installation/customize/" >Customize</a></h2>
+<p>You can override translation strings individually by putting them into override localization files at translations/&lt;lang&gt;/messages.&lt;lang&gt;.yml.</p>
+</span>
 
-&lt;VirtualHost *:443&gt;
+<span><h2>
+		<a href="/userli/installation/webserver/" >Webserver</a></h2>
+<p><p>Userli has to be installed like an other Symfony application.</p></p>
+</span>
+</ul>
 
-    ServerName users.example.org
-    ServerAdmin admin@example.org
 
-    DocumentRoot /var/www/users.example.org/www/public
 
-    &lt;Directory /var/www/users.example.org/www/public&gt;
-        AllowOverride AuthConfig FileInfo Indexes Limit Options=ExecCGI,Includes,Indexes,SymLinksIfOwnerMatch,MultiViews
-        Options -Indexes -MultiViews +SymLinksIfOwnerMatch
 
-        LimitRequestBody 10485760
 
-    &lt;/Directory&gt;
 
-    &lt;Directory /var/www/users.example.org/www/public/.well-known&gt;
-        Require all granted
-    &lt;/Directory&gt;
 
-    SetEnv APP_ENV prod
-
-    &lt;IfModule suexec_module&gt;
-        SuexecUserGroup userli userli
-    &lt;/IfModule&gt;
-
-    &lt;IfModule fcgid_module&gt;
-        AddHandler fcgid-script .php
-        FCGIWrapper /var/www/users.example.org/php-fcgi/php-fcgi-starter .php
-
-        IPCConnectTimeout 20
-        IPCCommTimeout 60
-        FcgidBusyTimeout 60
-        MaxRequestLen 10485760
-
-        &lt;Directory /var/www/users.example.org/www/public&gt;
-            Options +ExecCGI
-        &lt;/Directory&gt;
-    &lt;/IfModule&gt;
-
-    &lt;IfModule mod_headers.c&gt;
-        Header add X-Content-Type-Options &quot;nosniff&quot;
-        Header add X-XSS-Protection &quot;1; mode=block&quot;
-        Header set Referrer-Policy &quot;no-referrer&quot;
-        Header add X-Frame-Options &quot;SAMEORIGIN&quot;
-    &lt;/IfModule&gt;
-    ErrorLog  &quot;|/usr/bin/logger -t apache -p local0.error&quot;
-
-    Protocols h2 http/1.1
-
-    SSLEngine On
-    SSLCertificateFile /etc/letsencrypt/live/users.example.org/fullchain.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/users.example.org/privkey.pem
-
-    &lt;IfModule mod_headers.c&gt;
-        Header always set Strict-Transport-Security: &quot;max-age=31536000;includeSubdomains&quot;
-    &lt;/IfModule&gt;
-
-&lt;/VirtualHost&gt;
-</code></pre>
 
     
     
@@ -428,8 +385,8 @@ rewrite {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/customize/" title="Customize"> <i class="fa fa-chevron-left"></i><label>Customize</label></a>
-    <a class="nav nav-next" href="/userli/development/" title="Development" style="margin-right: 0px;"><label>Development</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/getting-started/" title="Quick Install"> <i class="fa fa-chevron-left"></i><label>Quick Install</label></a>
+    <a class="nav nav-next" href="/userli/installation/installation/" title="Installation" style="margin-right: 0px;"><label>Installation</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

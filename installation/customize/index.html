@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-04-03T11:27:34 CEST">
-<title>Checkpassword :: Userli Documentation</title>
+<meta name="revised" content="2019-04-04T09:29:04 CEST">
+<title>Customize :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/userli/getting-started/checkpassword/">
+  <body data-url="/userli/installation/customize/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -61,58 +61,64 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/userli/getting-started/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/userli/getting-started/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/userli/getting-started/">Getting started</a>
+      <a href="/userli/getting-started/">Quick Install</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/userli/installation/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/userli/installation/">Installation</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/getting-started/installation/" class="dd-item">
+      <li data-nav-id="/userli/installation/installation/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/installation/">
+          <a href="/userli/installation/installation/">
             Installation
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/configuration/" class="dd-item">
+      <li data-nav-id="/userli/installation/configuration/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/configuration/">
+          <a href="/userli/installation/configuration/">
             Configuration
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/finalize/" class="dd-item">
+      <li data-nav-id="/userli/installation/finalize/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/finalize/">
+          <a href="/userli/installation/finalize/">
             Finalize the setup
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/commands/" class="dd-item">
+      <li data-nav-id="/userli/installation/commands/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/commands/">
+          <a href="/userli/installation/commands/">
             Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/checkpassword/" class="dd-item active">
+      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/checkpassword/">
+          <a href="/userli/installation/checkpassword/">
             Checkpassword
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/customize/" class="dd-item">
+      <li data-nav-id="/userli/installation/customize/" class="dd-item active">
         <div>
-          <a href="/userli/getting-started/customize/">
+          <a href="/userli/installation/customize/">
             Customize
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/getting-started/webserver/" class="dd-item">
+      <li data-nav-id="/userli/installation/webserver/" class="dd-item">
         <div>
-          <a href="/userli/getting-started/webserver/">
+          <a href="/userli/installation/webserver/">
             Webserver
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
@@ -251,7 +257,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/getting-started/checkpassword.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/installation/customize.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -271,7 +277,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/getting-started/'>Getting started</a> > Checkpassword
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/installation/'>Installation</a> > Customize
 
  
 
@@ -284,14 +290,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#required-permissions-and-sudo">Required permissions and sudo</a></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -301,7 +300,7 @@
 
 <div id="body-inner">
   
-    <h1>Checkpassword</h1>
+    <h1>Customize</h1>
   
 
 
@@ -309,84 +308,9 @@
     
     
     
-    <p>The console command <code>bin/checkpassword</code> is a checkpassword command
-to be used for authentication (userdb and passdb lookup) by external services.
-So far, it&rsquo;s only tested with Dovecot.</p>
+    <p>You can override translation strings individually by putting them into
+override localization files at <code>translations/&lt;lang&gt;/messages.&lt;lang&gt;.yml</code>.</p>
 
-<p>In order to use the userli checkpassword command with Dovecot (&lt; 2.3), the
-<code>default_vsz_limit</code> (defaults to 256MB) needs to be raised in the Dovecot
-configuration. Starting with Dovecot 2.3, the default is 1G.</p>
-
-<p>Example configuration for using checkpassword in Dovecot:</p>
-
-<p><code>/etc/dovecot/conf.d/auth-checkpassword.conf.ext</code>:</p>
-
-<pre><code>passdb {
-  driver = checkpassword
-  args = /path/to/userli/bin/checkpassword
-}
-
-userdb {
-  driver = prefetch
-}
-
-userdb {
-  driver = checkpassword
-  args = /path/to/userli/bin/checkpassword
-}
-</code></pre>
-
-<h2 id="required-permissions-and-sudo">Required permissions and sudo</h2>
-
-<p>In order for checkpassword to work as expected, it has to be invoked by a user
-with read access to the whole userli project directory and write access to the
-<code>var/</code> subdirectory.</p>
-
-<p>The checkpassword script brings sudo support for this. In order to use it, do
-the following:</p>
-
-<ol>
-<li>Add sudoers rules for your dovecot user, allowing them to run the scripts as
-the userli system user:</li>
-</ol>
-
-<p><code>/etc/sudoers.d/userli</code>:</p>
-
-<pre><code>   # Disable sudo logging for user 'dovecot' to prevent logging of user passwords
-   Defaults:dovecot !syslog
-   Defaults:dovecot !logfile
-   # Allow user 'dovecot' to run some php console commands as user 'userli' 
-   dovecot ALL=(userli) NOPASSWD: /usr/bin/php /path/to/userli/bin/console app\:users\:check*
-   dovecot ALL=(userli) NOPASSWD: /usr/bin/php /path/to/userli/bin/console app\:users\:mailcrypt*
-   dovecot ALL=(userli) NOPASSWD: /usr/bin/php /path/to/userli/bin/console app\:users\:quota*
-</code></pre>
-
-<p>Don&rsquo;t forget to set permissions for <code>/etc/sudoers.d/userli</code> to 0440:</p>
-
-<pre><code>   chmod 0440 /etc/sudoers.d/userli
-</code></pre>
-
-<ol>
-<li>Configure Dovecot to pass sudo parameters to checkpassword (<code>-s &lt;user&gt;</code>,
-where <user> is the userli system user:</li>
-</ol>
-
-<p><code>/etc/dovecot/conf.d/auth-checkpassword.conf.ext</code>:</p>
-
-<pre><code>   passdb {
-     driver = checkpassword
-     args = /path/to/userli/bin/checkpassword -s userli
-   }
-
-   userdb {
-     driver = prefetch
-   }
-
-   userdb {
-     driver = checkpassword
-     args = /path/to/userli/bin/checkpassword -s userli
-   }
-</code></pre>
 
     
     
@@ -397,8 +321,8 @@ where <user> is the userli system user:</li>
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/getting-started/commands/" title="Commands"> <i class="fa fa-chevron-left"></i><label>Commands</label></a>
-    <a class="nav nav-next" href="/userli/getting-started/customize/" title="Customize" style="margin-right: 0px;"><label>Customize</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/installation/checkpassword/" title="Checkpassword"> <i class="fa fa-chevron-left"></i><label>Checkpassword</label></a>
+    <a class="nav nav-next" href="/userli/installation/webserver/" title="Webserver" style="margin-right: 0px;"><label>Webserver</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

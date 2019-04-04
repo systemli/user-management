@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on Userli Documentation</title>
+    <link>/userli/installation/</link>
+    <description>Recent content in Installation on Userli Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/userli/installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation</title>
+      <link>/userli/installation/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/installation/</guid>
+      <description>&lt;p&gt;The following steps are here to help you instal Userli.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>/userli/installation/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/configuration/</guid>
+      <description>&lt;p&gt;You can personalize your Userli instance by creating &lt;code&gt;.env.local&lt;/code&gt;,
+which overrides some values from &lt;code&gt;.env&lt;/code&gt;. You should at least configure
+the following values.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Finalize the setup</title>
+      <link>/userli/installation/finalize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/finalize/</guid>
+      <description>&lt;p&gt;Last steps to make Userli work properly.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Commands</title>
+      <link>/userli/installation/commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/commands/</guid>
+      <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Checkpassword</title>
+      <link>/userli/installation/checkpassword/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/checkpassword/</guid>
+      <description>&lt;p&gt;The console command &lt;code&gt;bin/checkpassword&lt;/code&gt; is a checkpassword command
+to be used for authentication (userdb and passdb lookup) by external services.
+So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Customize</title>
+      <link>/userli/installation/customize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/customize/</guid>
+      <description>You can override translation strings individually by putting them into override localization files at translations/&amp;lt;lang&amp;gt;/messages.&amp;lt;lang&amp;gt;.yml.</description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>/userli/installation/webserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/webserver/</guid>
+      <description>&lt;p&gt;Userli has to be installed like an other Symfony application.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

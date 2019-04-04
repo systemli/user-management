@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-04-04T09:29:04 CEST">
-<title>Creating release tarballs :: Userli Documentation</title>
+<title>Finalize the setup :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/userli/development/release/">
+  <body data-url="/userli/installation/finalize/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -67,10 +67,11 @@
       <a href="/userli/getting-started/">Quick Install</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/userli/installation/" class="dd-item haschildren
+    <li data-nav-id="/userli/installation/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/userli/installation/">Installation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/installation/">Installation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/installation/installation/" class="dd-item">
@@ -87,7 +88,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/installation/finalize/" class="dd-item">
+      <li data-nav-id="/userli/installation/finalize/" class="dd-item active">
         <div>
           <a href="/userli/installation/finalize/">
             Finalize the setup
@@ -124,11 +125,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/development/" class="dd-item parent haschildren
+    <li data-nav-id="/userli/development/" class="dd-item haschildren
         ">
       <div>
-      <a href="/userli/development/">Development</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/development/documentation/" class="dd-item">
@@ -145,7 +145,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/development/release/" class="dd-item active">
+      <li data-nav-id="/userli/development/release/" class="dd-item">
         <div>
           <a href="/userli/development/release/">
             Creating release tarballs
@@ -257,7 +257,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/development/release.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/installation/finalize.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -277,7 +277,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/development/'>Development</a> > Creating release tarballs
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/installation/'>Installation</a> > Finalize the setup
 
  
 
@@ -290,7 +290,15 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#create-database-scheme">Create database scheme</a></li>
+<li><a href="#cronjobs">Cronjobs</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -300,7 +308,7 @@
 
 <div id="body-inner">
   
-    <h1>Creating release tarballs</h1>
+    <h1>Finalize the setup</h1>
   
 
 
@@ -308,18 +316,32 @@
     
     
     
-    <p>Release tarballs are the preferred way to install Userli. This page explains how to create them.</p>
+    <p>Last steps to make Userli work properly.</p>
 
-<p>First, you&rsquo;ll need a <a href="https://github.com/settings/tokens">Github API token</a>.
-The token needs the following priviledges:</p>
+<h2 id="create-database-scheme">Create database scheme</h2>
 
-<pre><code>public_repo, repo:status, repo_deployment
+<pre><code># Create default database schema
+bin/console doctrine:schema:create
+
+# Load default reserved names into database
+bin/console app:reservednames:import
+
+# Warm up cache
+bin/console cache:warmup
 </code></pre>
 
-<p>Now, execute the following script. It will create a version tag, release and
-copy the info from <code>CHANGELOG.md</code> to the release info.</p>
+<h2 id="cronjobs">Cronjobs</h2>
 
-<pre><code>$ GITHUB_API_TOKEN=&lt;token&gt; GPG_SIGN_KEY=&quot;&lt;key_id&gt;&quot; ./bin/github-release.sh &lt;version&gt;
+<p>Some cronjobs are needed in order to run regular tasks:</p>
+
+<pre><code># Daily purge data from deleted mail users
+@daily userli cd /path/to/userli &amp;&amp; bin/console app:users:remove -q
+
+# Daily unlink old redeemed vouchers
+@daily userli cd /path/to/userli &amp;&amp; bin/console app:voucher:unlink
+
+# Send weekly report to admins
+12 13 * * 1 userli cd /path/to/userli &amp;&amp; bin/console app:report:weekly
 </code></pre>
 
     
@@ -331,8 +353,8 @@ copy the info from <code>CHANGELOG.md</code> to the release info.</p>
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/development/code_of_conduct/" title="Code of Conduct"> <i class="fa fa-chevron-left"></i><label>Code of Conduct</label></a>
-    <a class="nav nav-next" href="/userli/development/coding_style/" title="Coding style" style="margin-right: 0px;"><label>Coding style</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/installation/configuration/" title="Configuration"> <i class="fa fa-chevron-left"></i><label>Configuration</label></a>
+    <a class="nav nav-next" href="/userli/installation/commands/" title="Commands" style="margin-right: 0px;"><label>Commands</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

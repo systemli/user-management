@@ -23,10 +23,10 @@ Editing Change files in hugo/content to edit the documentation. See the DocDock 
     
     <item>
       <title>Installation</title>
-      <link>/userli/getting-started/installation/</link>
+      <link>/userli/installation/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/installation/</guid>
+      <guid>/userli/installation/installation/</guid>
       <description>&lt;p&gt;The following steps are here to help you instal Userli.&lt;/p&gt;</description>
     </item>
     
@@ -72,10 +72,10 @@ Our Standards Examples of behavior that contributes to creating a positive envir
     
     <item>
       <title>Configuration</title>
-      <link>/userli/getting-started/configuration/</link>
+      <link>/userli/installation/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/configuration/</guid>
+      <guid>/userli/installation/configuration/</guid>
       <description>&lt;p&gt;You can personalize your Userli instance by creating &lt;code&gt;.env.local&lt;/code&gt;,
 which overrides some values from &lt;code&gt;.env&lt;/code&gt;. You should at least configure
 the following values.&lt;/p&gt;</description>
@@ -111,10 +111,10 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     
     <item>
       <title>Finalize the setup</title>
-      <link>/userli/getting-started/finalize/</link>
+      <link>/userli/installation/finalize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/finalize/</guid>
+      <guid>/userli/installation/finalize/</guid>
       <description>&lt;p&gt;Last steps to make Userli work properly.&lt;/p&gt;</description>
     </item>
     
@@ -138,10 +138,10 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     
     <item>
       <title>Commands</title>
-      <link>/userli/getting-started/commands/</link>
+      <link>/userli/installation/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/commands/</guid>
+      <guid>/userli/installation/commands/</guid>
       <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
     </item>
     
@@ -156,10 +156,10 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     
     <item>
       <title>Checkpassword</title>
-      <link>/userli/getting-started/checkpassword/</link>
+      <link>/userli/installation/checkpassword/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/checkpassword/</guid>
+      <guid>/userli/installation/checkpassword/</guid>
       <description>&lt;p&gt;The console command &lt;code&gt;bin/checkpassword&lt;/code&gt; is a checkpassword command
 to be used for authentication (userdb and passdb lookup) by external services.
 So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
@@ -167,19 +167,19 @@ So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
     
     <item>
       <title>Customize</title>
-      <link>/userli/getting-started/customize/</link>
+      <link>/userli/installation/customize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/customize/</guid>
+      <guid>/userli/installation/customize/</guid>
       <description>You can override translation strings individually by putting them into override localization files at translations/&amp;lt;lang&amp;gt;/messages.&amp;lt;lang&amp;gt;.yml.</description>
     </item>
     
     <item>
       <title>Webserver</title>
-      <link>/userli/getting-started/webserver/</link>
+      <link>/userli/installation/webserver/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/getting-started/webserver/</guid>
+      <guid>/userli/installation/webserver/</guid>
       <description>&lt;p&gt;Userli has to be installed like an other Symfony application.&lt;/p&gt;</description>
     </item>
     

@@ -7,15 +7,15 @@
   </url>
   
   <url>
-    <loc>/userli/getting-started/</loc>
-  </url>
-  
-  <url>
-    <loc>/userli/getting-started/installation/</loc>
+    <loc>/userli/installation/installation/</loc>
   </url>
   
   <url>
     <loc>/userli/mail_crypt/legacy/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/getting-started/</loc>
   </url>
   
   <url>
@@ -31,11 +31,7 @@
   </url>
   
   <url>
-    <loc>/userli/getting-started/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>/userli/development/</loc>
+    <loc>/userli/installation/configuration/</loc>
   </url>
   
   <url>
@@ -43,7 +39,7 @@
   </url>
   
   <url>
-    <loc>/userli/mail_crypt/</loc>
+    <loc>/userli/installation/</loc>
   </url>
   
   <url>
@@ -55,7 +51,11 @@
   </url>
   
   <url>
-    <loc>/userli/getting-started/finalize/</loc>
+    <loc>/userli/development/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/installation/finalize/</loc>
   </url>
   
   <url>
@@ -67,7 +67,7 @@
   </url>
   
   <url>
-    <loc>/userli/getting-started/commands/</loc>
+    <loc>/userli/installation/commands/</loc>
   </url>
   
   <url>
@@ -75,15 +75,19 @@
   </url>
   
   <url>
-    <loc>/userli/getting-started/checkpassword/</loc>
+    <loc>/userli/mail_crypt/</loc>
   </url>
   
   <url>
-    <loc>/userli/getting-started/customize/</loc>
+    <loc>/userli/installation/checkpassword/</loc>
   </url>
   
   <url>
-    <loc>/userli/getting-started/webserver/</loc>
+    <loc>/userli/installation/customize/</loc>
+  </url>
+  
+  <url>
+    <loc>/userli/installation/webserver/</loc>
   </url>
   
   <url>
