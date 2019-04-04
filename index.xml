@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Create database</title>
+      <link>/userli/installation/database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/database/</guid>
+      <description>&lt;p&gt;Create Userli database and database user.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Documentation</title>
       <link>/userli/development/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -19,15 +28,6 @@
       <description>This page describes how to edit the documentation you&amp;rsquo;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.
 cd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).
 Editing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.</description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>/userli/installation/installation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/userli/installation/installation/</guid>
-      <description>&lt;p&gt;The following steps are here to help you instal Userli.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,14 +71,12 @@ Our Standards Examples of behavior that contributes to creating a positive envir
     </item>
     
     <item>
-      <title>Configuration</title>
-      <link>/userli/installation/configuration/</link>
+      <title>Get the code</title>
+      <link>/userli/installation/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/installation/configuration/</guid>
-      <description>&lt;p&gt;You can personalize your Userli instance by creating &lt;code&gt;.env.local&lt;/code&gt;,
-which overrides some values from &lt;code&gt;.env&lt;/code&gt;. You should at least configure
-the following values.&lt;/p&gt;</description>
+      <guid>/userli/installation/code/</guid>
+      <description>&lt;p&gt;Install the &lt;a href=&#34;https://github.com/systemli/userli/releases/latest&#34;&gt;latest release&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -101,21 +99,23 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     </item>
     
     <item>
+      <title>Configuration</title>
+      <link>/userli/installation/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/configuration/</guid>
+      <description>&lt;p&gt;You can personalize your Userli instance by creating &lt;code&gt;.env.local&lt;/code&gt;,
+which overrides some values from &lt;code&gt;.env&lt;/code&gt;. You should at least configure
+the following values.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Creating release tarballs</title>
       <link>/userli/development/release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/development/release/</guid>
       <description>&lt;p&gt;Release tarballs are the preferred way to install Userli. This page explains how to create them.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Finalize the setup</title>
-      <link>/userli/installation/finalize/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/userli/installation/finalize/</guid>
-      <description>&lt;p&gt;Last steps to make Userli work properly.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -137,12 +137,12 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
     </item>
     
     <item>
-      <title>Commands</title>
-      <link>/userli/installation/commands/</link>
+      <title>Finalize the setup</title>
+      <link>/userli/installation/finalize/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/installation/commands/</guid>
-      <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
+      <guid>/userli/installation/finalize/</guid>
+      <description>&lt;p&gt;Last steps to make Userli work properly.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -152,6 +152,24 @@ A second copy of the private key is stored encrypted with a libargon2i hash of t
       
       <guid>/userli/screenshots/voucher/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Webserver configuration</title>
+      <link>/userli/installation/webserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/webserver/</guid>
+      <description>&lt;p&gt;Userli has to be installed like any other &lt;a href=&#34;https://symfony.com/doc/current/setup/web_server_configuration.html&#34;&gt;Symfony application&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Customize</title>
+      <link>/userli/installation/customize/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/installation/customize/</guid>
+      <description>You can override translation strings individually by putting them into override localization files at translations/&amp;lt;lang&amp;gt;/messages.&amp;lt;lang&amp;gt;.yml.</description>
     </item>
     
     <item>
@@ -166,21 +184,12 @@ So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Customize</title>
-      <link>/userli/installation/customize/</link>
+      <title>Commands</title>
+      <link>/userli/installation/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/userli/installation/customize/</guid>
-      <description>You can override translation strings individually by putting them into override localization files at translations/&amp;lt;lang&amp;gt;/messages.&amp;lt;lang&amp;gt;.yml.</description>
-    </item>
-    
-    <item>
-      <title>Webserver</title>
-      <link>/userli/installation/webserver/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/userli/installation/webserver/</guid>
-      <description>&lt;p&gt;Userli has to be installed like an other Symfony application.&lt;/p&gt;</description>
+      <guid>/userli/installation/commands/</guid>
+      <description>&lt;p&gt;This app brings custom commands:&lt;/p&gt;</description>
     </item>
     
   </channel>

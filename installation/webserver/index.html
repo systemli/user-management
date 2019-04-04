@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-04-04T09:31:41 CEST">
-<title>Webserver :: Userli Documentation</title>
+<meta name="revised" content="2019-04-04T09:46:47 CEST">
+<title>Webserver configuration :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -74,10 +74,17 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/installation/installation/" class="dd-item">
+      <li data-nav-id="/userli/installation/database/" class="dd-item">
         <div>
-          <a href="/userli/installation/installation/">
-            Installation
+          <a href="/userli/installation/database/">
+            Create database
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/code/" class="dd-item">
+        <div>
+          <a href="/userli/installation/code/">
+            Get the code
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -95,17 +102,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/installation/commands/" class="dd-item">
+      <li data-nav-id="/userli/installation/webserver/" class="dd-item active">
         <div>
-          <a href="/userli/installation/commands/">
-            Commands
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
-        <div>
-          <a href="/userli/installation/checkpassword/">
-            Checkpassword
+          <a href="/userli/installation/webserver/">
+            Webserver configuration
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -116,10 +116,17 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/installation/webserver/" class="dd-item active">
+      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
         <div>
-          <a href="/userli/installation/webserver/">
-            Webserver
+          <a href="/userli/installation/checkpassword/">
+            Checkpassword
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/commands/" class="dd-item">
+        <div>
+          <a href="/userli/installation/commands/">
+            Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -277,7 +284,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/installation/'>Installation</a> > Webserver
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/installation/'>Installation</a> > Webserver configuration
 
  
 
@@ -300,7 +307,7 @@
 
 <div id="body-inner">
   
-    <h1>Webserver</h1>
+    <h1>Webserver configuration</h1>
   
 
 
@@ -308,7 +315,7 @@
     
     
     
-    <p>Userli has to be installed like an other Symfony application.</p>
+    <p>Userli has to be installed like any other <a href="https://symfony.com/doc/current/setup/web_server_configuration.html">Symfony application</a>.</p>
 
 <p>Below, you&rsquo;ll find some example configurations for webservers.
 Don&rsquo;t blindly copy them, but adjust them to your needs.</p>
@@ -434,8 +441,8 @@ rewrite {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/installation/customize/" title="Customize"> <i class="fa fa-chevron-left"></i><label>Customize</label></a>
-    <a class="nav nav-next" href="/userli/development/" title="Development" style="margin-right: 0px;"><label>Development</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/installation/finalize/" title="Finalize the setup"> <i class="fa fa-chevron-left"></i><label>Finalize the setup</label></a>
+    <a class="nav nav-next" href="/userli/installation/customize/" title="Customize" style="margin-right: 0px;"><label>Customize</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

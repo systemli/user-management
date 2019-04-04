@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-04-04T09:31:41 CEST">
+<meta name="revised" content="2019-04-04T09:46:47 CEST">
 <title>Installation :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -74,10 +74,17 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/installation/installation/" class="dd-item">
+      <li data-nav-id="/userli/installation/database/" class="dd-item">
         <div>
-          <a href="/userli/installation/installation/">
-            Installation
+          <a href="/userli/installation/database/">
+            Create database
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/code/" class="dd-item">
+        <div>
+          <a href="/userli/installation/code/">
+            Get the code
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -95,17 +102,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/installation/commands/" class="dd-item">
+      <li data-nav-id="/userli/installation/webserver/" class="dd-item">
         <div>
-          <a href="/userli/installation/commands/">
-            Commands
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
-        <div>
-          <a href="/userli/installation/checkpassword/">
-            Checkpassword
+          <a href="/userli/installation/webserver/">
+            Webserver configuration
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -116,10 +116,17 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/installation/webserver/" class="dd-item">
+      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
         <div>
-          <a href="/userli/installation/webserver/">
-            Webserver
+          <a href="/userli/installation/checkpassword/">
+            Checkpassword
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/commands/" class="dd-item">
+        <div>
+          <a href="/userli/installation/commands/">
+            Commands
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -330,8 +337,13 @@
 <ul class="children children-h2">
 
 <span><h2>
-		<a href="/userli/installation/installation/" >Installation</a></h2>
-<p><p>The following steps are here to help you instal Userli.</p></p>
+		<a href="/userli/installation/database/" >Create database</a></h2>
+<p><p>Create Userli database and database user.</p></p>
+</span>
+
+<span><h2>
+		<a href="/userli/installation/code/" >Get the code</a></h2>
+<p><p>Install the <a href="https://github.com/systemli/userli/releases/latest">latest release</a>.</p></p>
 </span>
 
 <span><h2>
@@ -347,8 +359,13 @@ the following values.</p></p>
 </span>
 
 <span><h2>
-		<a href="/userli/installation/commands/" >Commands</a></h2>
-<p><p>This app brings custom commands:</p></p>
+		<a href="/userli/installation/webserver/" >Webserver configuration</a></h2>
+<p><p>Userli has to be installed like any other <a href="https://symfony.com/doc/current/setup/web_server_configuration.html">Symfony application</a>.</p></p>
+</span>
+
+<span><h2>
+		<a href="/userli/installation/customize/" >Customize</a></h2>
+<p>You can override translation strings individually by putting them into override localization files at translations/&lt;lang&gt;/messages.&lt;lang&gt;.yml.</p>
 </span>
 
 <span><h2>
@@ -359,13 +376,8 @@ So far, it&rsquo;s only tested with Dovecot.</p></p>
 </span>
 
 <span><h2>
-		<a href="/userli/installation/customize/" >Customize</a></h2>
-<p>You can override translation strings individually by putting them into override localization files at translations/&lt;lang&gt;/messages.&lt;lang&gt;.yml.</p>
-</span>
-
-<span><h2>
-		<a href="/userli/installation/webserver/" >Webserver</a></h2>
-<p><p>Userli has to be installed like an other Symfony application.</p></p>
+		<a href="/userli/installation/commands/" >Commands</a></h2>
+<p><p>This app brings custom commands:</p></p>
 </span>
 </ul>
 
@@ -386,7 +398,7 @@ So far, it&rsquo;s only tested with Dovecot.</p></p>
 
 <div id="navigation">
 <a class="nav nav-prev" href="/userli/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i><label>Getting Started</label></a>
-    <a class="nav nav-next" href="/userli/installation/installation/" title="Installation" style="margin-right: 0px;"><label>Installation</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/userli/installation/database/" title="Create database" style="margin-right: 0px;"><label>Create database</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
