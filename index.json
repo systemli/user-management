@@ -7,6 +7,13 @@
 	"content": " This page describes how to edit the documentation you\u0026rsquo;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.\ncd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).\nEditing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.\ngit commit -a  Testing Run hugo locally to see if your content looks like you imagined.\nhugo server  Open http://localhost:1313/ in your local browser.\nPublishing Run the following script to commit to the branch gh-pages. From there, github auto-deploys the documentation.\n./publish_docs.sh  See Hugo documentation for more details.\n"
 },
 {
+	"uri": "/userli/getting-started/",
+	"title": "Getting Started",
+	"tags": [],
+	"description": "",
+	"content": "The easiest way to install Userli on a fresh Debian OS is running these commands:\n# install dependencies sudo apt install -y python-pip git sudo pip install molecule # get code git clone https://github.com/systemli/ansible-role-userli.git cd ansible-role-userli # install caddy, mysql, php7.1 and userli sudo molecule converge -s localhost  This installs all dependencies, creates a database and database user (name: userli, password: userli), and installs the userli code at /var/www/userli. It is accessible via http://localhost:8080.\nDo not run this configuration in production. Next, you would have to change the password of the database user, configure your instance, and probably install Dovecot to do anything meaningful.\nBetter, do a manual installation to understand each part of your configuration.\n"
+},
+{
 	"uri": "/userli/installation/installation/",
 	"title": "Installation",
 	"tags": [],
@@ -19,13 +26,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Legacy users (without MailCrypt keys) continue to work without mailbox encryption. If they generate a recovery token manually in the account settings, a MailCrypt key pair gets created for them. This doesn\u0026rsquo;t enable MailCrypt for them automatically, though.\nIn order to enable MailCrypt for a legacy user, do the following:\n Ensure that they have a recovery token generated. This will automatically generate MailCrypt key pair as well. This step can only be done by the account holder, as the user password is required to do so. Manually set mailCrypt=1 for the user in the virtual_users database table. This needs to be done manually on a per-user basis on purpose.  Please note that existing mails will not be encrypted automatically. Instead, all existing mail stays unencrypted and only new incoming mail will be stored encrypted.\nIn bin/mailcrypt-encrypt-maildir you find a script to encrypt unencrypted mail from legacy mailboxes that already have a MailCrypt key configured. This script needs to be invoked as a user who has write access to the mailbox in question - probably the best is to run it as root:\n./bin/mailcrypt-encrypt-maildir user@example.org  The following SQL statement can be used to enable MailCrypt for all legacy users that generated a recovery token in the meantime (and thus have a MailCrypt key). Use with caution!\nUPDATE virtual_users SET mailCrypt=1 WHERE recoverySecretBox IS NOT NULL AND mailCryptSecretBox IS NOT NULL;  We might add a migration script to encrypt old mails from existing users at a later point.\n"
-},
-{
-	"uri": "/userli/getting-started/",
-	"title": "Quick Install",
-	"tags": [],
-	"description": "",
-	"content": "The easiest way to install Userli on a fresh Debian OS is running these commands:\n# install dependencies sudo apt install -y python-pip git sudo pip install molecule # get code git clone https://github.com/systemli/ansible-role-userli.git cd ansible-role-userli # install caddy, mysql, php7.1 and userli sudo molecule converge -s localhost  This installs all dependencies, creates a database and database user (name: userli, password: userli), and installs the userli code at /var/www/userli. It is accessible via http://localhost:8080.\nDo not run this configuration in production. Next, you would have to change the password of the database user, configure your instance, and probably install Dovecot to do anything meaningful.\nBetter, do a manual installation to understand each part of your configuration.\n"
 },
 {
 	"uri": "/userli/screenshots/recovery/",
