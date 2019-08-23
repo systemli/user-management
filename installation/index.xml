@@ -72,9 +72,9 @@ the following values.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/installation/checkpassword/</guid>
-      <description>&lt;p&gt;The console command &lt;code&gt;bin/checkpassword&lt;/code&gt; is a checkpassword command
-to be used for authentication (userdb and passdb lookup) by external services.
-So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The PHP console command &lt;code&gt;bin/console app:users:checkpassword&lt;/code&gt; provides a
+checkpassword command to be used for authentication (userdb and passdb
+lookup) by external services. So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
     </item>
     
     <item>

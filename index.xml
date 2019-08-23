@@ -155,6 +155,15 @@ the following values.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Tests</title>
+      <link>/userli/development/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/tests/</guid>
+      <description> Linting, unit tests and functional tests cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
+    </item>
+    
+    <item>
       <title>Webserver configuration</title>
       <link>/userli/installation/webserver/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -178,9 +187,9 @@ the following values.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/installation/checkpassword/</guid>
-      <description>&lt;p&gt;The console command &lt;code&gt;bin/checkpassword&lt;/code&gt; is a checkpassword command
-to be used for authentication (userdb and passdb lookup) by external services.
-So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The PHP console command &lt;code&gt;bin/console app:users:checkpassword&lt;/code&gt; provides a
+checkpassword command to be used for authentication (userdb and passdb
+lookup) by external services. So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
     </item>
     
     <item>

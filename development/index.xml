@@ -49,5 +49,14 @@ Our Standards Examples of behavior that contributes to creating a positive envir
       <description>&lt;p&gt;We use the default Symfony coding style.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Tests</title>
+      <link>/userli/development/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/tests/</guid>
+      <description> Linting, unit tests and functional tests cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
+    </item>
+    
   </channel>
 </rss>

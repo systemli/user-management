@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-08-23T14:20:04 CEST">
-<title>Create database :: Userli Documentation</title>
+<title>Tests :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
 <link href="/userli/css/font-awesome.min.css" rel="stylesheet">
@@ -22,12 +22,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="">
+<meta name="description" content="How to test during development">
 
 
     
   </head>
-  <body data-url="/userli/installation/database/">
+  <body data-url="/userli/development/tests/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -67,14 +67,13 @@
       <a href="/userli/getting-started/">Getting Started</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/userli/installation/" class="dd-item parent haschildren
+    <li data-nav-id="/userli/installation/" class="dd-item haschildren
         ">
       <div>
-      <a href="/userli/installation/">Installation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/installation/">Installation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/installation/database/" class="dd-item active">
+      <li data-nav-id="/userli/installation/database/" class="dd-item">
         <div>
           <a href="/userli/installation/database/">
             Create database
@@ -132,10 +131,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/userli/development/" class="dd-item haschildren
+    <li data-nav-id="/userli/development/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/userli/development/">Development</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/userli/development/">Development</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/userli/development/documentation/" class="dd-item">
@@ -166,7 +166,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/development/tests/" class="dd-item">
+      <li data-nav-id="/userli/development/tests/" class="dd-item active">
         <div>
           <a href="/userli/development/tests/">
             Tests
@@ -271,7 +271,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/installation/database.md" target="blank">
+      <a class="github-link" href="https://github.com/systemli/userli/edit/master/hugo/content/development/tests.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -291,7 +291,7 @@
 
 
 
- <a href='/userli/'>Userli Documentation</a> > <a href='/userli/installation/'>Installation</a> > Create database
+ <a href='/userli/'>Userli Documentation</a> > <a href='/userli/development/'>Development</a> > Tests
 
  
 
@@ -304,7 +304,15 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</a></li>
+<li><a href="#test-checkpassword-script">Test checkpassword script</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -314,7 +322,7 @@
 
 <div id="body-inner">
   
-    <h1>Create database</h1>
+    <h1>Tests</h1>
   
 
 
@@ -322,14 +330,22 @@
     
     
     
-    <p>Create Userli database and database user.</p>
+    
 
-<p>For simplicity, the user has full access to <code>userli</code> database.</p>
+<h2 id="linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</h2>
 
-<pre><code>mysql -e 'CREATE DATABASE userli'
-mysql -e 'CREATE USER `userli`@`localhost` IDENTIFIED BY &quot;&lt;password&gt;&quot;'
-mysql -e 'GRANT ALL PRIVILEGES ON userli.* TO `userli`@`localhost`'
+<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+make test
+make integration
 </code></pre>
+
+<h2 id="test-checkpassword-script">Test checkpassword script</h2>
+
+<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+bin/console doctrine:schema:create -n &amp;&amp; bin/console doctrine:fixture:load -n &amp;&amp; exit
+cd .. &amp;&amp; tests/test_checkpassword_login.sh
+</code></pre>
+
 
     
     
@@ -340,8 +356,8 @@ mysql -e 'GRANT ALL PRIVILEGES ON userli.* TO `userli`@`localhost`'
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/userli/installation/" title="Installation"> <i class="fa fa-chevron-left"></i><label>Installation</label></a>
-    <a class="nav nav-next" href="/userli/installation/code/" title="Get the code" style="margin-right: 0px;"><label>Get the code</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/userli/development/coding_style/" title="Coding style"> <i class="fa fa-chevron-left"></i><label>Coding style</label></a>
+    <a class="nav nav-next" href="/userli/mail_crypt/" title="MailCrypt" style="margin-right: 0px;"><label>MailCrypt</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

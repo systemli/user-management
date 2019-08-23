@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-04T15:59:38 CEST">
+<meta name="revised" content="2019-08-23T14:20:04 CEST">
 <title>Development :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -166,6 +166,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/userli/development/tests/" class="dd-item">
+        <div>
+          <a href="/userli/development/tests/">
+            Tests
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/userli/mail_crypt/" class="dd-item haschildren
@@ -298,7 +305,6 @@
 <ul>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#start-vagrant-box">Start Vagrant box</a></li>
-<li><a href="#tests">Tests</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -356,12 +362,6 @@ as some random aliases and vouchers. The domain for all accounts is
 
 <p>Visit you local instance at <a href="http://192.168.33.99/">http://192.168.33.99/</a>.</p>
 
-<h2 id="tests">Tests</h2>
-
-<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
-make test
-</code></pre>
-
 <ul class="children children-h2">
 
 <span><h2>
@@ -382,6 +382,11 @@ make test
 <span><h2>
         <a href="/userli/development/coding_style/" >Coding style</a></h2>
 <p><p>We use the default Symfony coding style.</p></p>
+</span>
+
+<span><h2>
+        <a href="/userli/development/tests/" >Tests</a></h2>
+<p>How to test during development</p>
 </span>
 </ul>
 
