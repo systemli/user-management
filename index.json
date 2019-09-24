@@ -18,7 +18,7 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": "The easiest way to install Userli on a fresh Debian OS is running these commands:\n# install dependencies sudo apt install -y python-pip git sudo pip install molecule # get code git clone https://github.com/systemli/ansible-role-userli.git cd ansible-role-userli # install caddy, mysql, php7.1 and userli sudo molecule converge -s localhost  This installs all dependencies, creates a database and database user (name: userli, password: userli), and installs the userli code at /var/www/userli. It is accessible via http://localhost:8080.\nDo not run this configuration in production. Next, you would have to change the password of the database user, configure your instance, and probably install Dovecot to do anything meaningful.\nBetter, do a manual installation to understand each part of your configuration.\n"
+	"content": "The easiest way to install Userli on a fresh Debian Buster is running these commands:\n# install dependencies sudo apt install -y python-pip git sudo pip install molecule # get code git clone https://github.com/systemli/ansible-role-userli.git cd ansible-role-userli # install apache2, mariadb, php7.3 and userli sudo molecule converge -s localhost  This installs all dependencies, creates a database and database user (name: userli, password: userli), and installs the userli code at /var/www/userli. It is accessible via http://localhost:8080.\nDo not run this configuration in production. Next, you would have to change the password of the database user, configure your instance, and probably install Dovecot to do anything meaningful.\nBetter, do a manual installation to understand each part of your configuration.\n"
 },
 {
 	"uri": "/userli/mail_crypt/legacy/",
@@ -95,7 +95,7 @@
 	"title": "Development",
 	"tags": [],
 	"description": "",
-	"content": " Requirements  Vagrant  Start Vagrant box git submodule update --init cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh # create database and schema bin/console doctrine:schema:create # load sample data bin/console doctrine:fixtures:load # get node modules yarn # update assets yarn encore dev  The doctrine:fixtures:load command will create four new accounts with corresponding roles (admin, user, support, suspicious) as well as some random aliases and vouchers. The domain for all accounts is \u0026ldquo;example.org\u0026rdquo; and the password is \u0026ldquo;password\u0026rdquo;.\nIf you want to see more details about how the users are created, see src/DataFixtures.\nVisit you local instance at http://192.168.33.99/.\n Documentation Built with Hugo and hosted on Github Pages\n  Code of Conduct Everyone welcome\n  Creating release tarballs Release tarballs are the preferred way to install Userli. This page explains how to create them.\n  Coding style We use the default Symfony coding style.\n  Tests How to test during development\n  "
+	"content": " Requirements  Vagrant  Start Vagrant box git submodule update --init vagrant up \u0026amp;\u0026amp; vagrant ssh # create database and schema bin/console doctrine:schema:create # load sample data bin/console doctrine:fixtures:load # get node modules yarn # update assets yarn encore dev  The doctrine:fixtures:load command will create four new accounts with corresponding roles (admin, user, support, suspicious) as well as some random aliases and vouchers. The domain for all accounts is \u0026ldquo;example.org\u0026rdquo; and the password is \u0026ldquo;password\u0026rdquo;.\nIf you want to see more details about how the users are created, see src/DataFixtures.\nVisit you local instance at http://192.168.33.99/.\n Documentation Built with Hugo and hosted on Github Pages\n  Code of Conduct Everyone welcome\n  Creating release tarballs Release tarballs are the preferred way to install Userli. This page explains how to create them.\n  Coding style We use the default Symfony coding style.\n  Tests How to test during development\n  "
 },
 {
 	"uri": "/userli/screenshots/admin/",
@@ -137,7 +137,7 @@
 	"title": "Tests",
 	"tags": [],
 	"description": "How to test during development",
-	"content": " Linting, unit tests and functional tests cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh make test make integration  Test checkpassword script cd vagrant \u0026amp;\u0026amp; vagrant up \u0026amp;\u0026amp; vagrant ssh bin/console doctrine:schema:create -n \u0026amp;\u0026amp; bin/console doctrine:fixture:load -n \u0026amp;\u0026amp; exit cd .. \u0026amp;\u0026amp; tests/test_checkpassword_login.sh  "
+	"content": " Linting, unit tests and functional tests vagrant up \u0026amp;\u0026amp; vagrant ssh make test make integration  Test checkpassword script vagrant up \u0026amp;\u0026amp; vagrant ssh bin/console doctrine:schema:create -n \u0026amp;\u0026amp; bin/console doctrine:fixture:load -n \u0026amp;\u0026amp; exit cd .. \u0026amp;\u0026amp; tests/test_checkpassword_login.sh  "
 },
 {
 	"uri": "/userli/installation/webserver/",

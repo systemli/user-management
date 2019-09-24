@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-23T14:20:04 CEST">
+<meta name="revised" content="2019-09-24T16:34:26 CEST">
 <title>Tests :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -334,14 +334,14 @@
 
 <h2 id="linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</h2>
 
-<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+<pre><code>vagrant up &amp;&amp; vagrant ssh
 make test
 make integration
 </code></pre>
 
 <h2 id="test-checkpassword-script">Test checkpassword script</h2>
 
-<pre><code>cd vagrant &amp;&amp; vagrant up &amp;&amp; vagrant ssh
+<pre><code>vagrant up &amp;&amp; vagrant ssh
 bin/console doctrine:schema:create -n &amp;&amp; bin/console doctrine:fixture:load -n &amp;&amp; exit
 cd .. &amp;&amp; tests/test_checkpassword_login.sh
 </code></pre>

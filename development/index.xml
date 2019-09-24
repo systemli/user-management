@@ -55,7 +55,7 @@ Our Standards Examples of behavior that contributes to creating a positive envir
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/development/tests/</guid>
-      <description> Linting, unit tests and functional tests cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script cd vagrant &amp;amp;&amp;amp; vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
+      <description> Linting, unit tests and functional tests vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
     </item>
     
   </channel>

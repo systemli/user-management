@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-23T14:20:04 CEST">
+<meta name="revised" content="2019-09-24T16:34:26 CEST">
 <title>Getting Started :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -317,7 +317,7 @@
     
     
 
-<p>The easiest way to install Userli on a fresh Debian OS is running these commands:</p>
+<p>The easiest way to install Userli on a fresh Debian Buster is running these commands:</p>
 
 <pre><code># install dependencies
 sudo apt install -y python-pip git
@@ -327,7 +327,7 @@ sudo pip install molecule
 git clone https://github.com/systemli/ansible-role-userli.git
 cd ansible-role-userli
 
-# install caddy, mysql, php7.1 and userli
+# install apache2, mariadb, php7.3 and userli
 sudo molecule converge -s localhost
 </code></pre>
 
