@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MailCrypt on Userli Documentation</title>
+    <link>/userli/mail_crypt/</link>
+    <description>Recent content in MailCrypt on Userli Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/userli/mail_crypt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Migrating legacy users</title>
+      <link>/userli/mail_crypt/legacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/mail_crypt/legacy/</guid>
+      <description>&lt;p&gt;Legacy users (without MailCrypt keys) continue to work without mailbox
+encryption. If they generate a recovery token manually in the account settings,
+a MailCrypt key pair gets created for them. This doesn&amp;rsquo;t enable MailCrypt for
+them automatically, though.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Implementation details</title>
+      <link>/userli/mail_crypt/details/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/mail_crypt/details/</guid>
+      <description>We use elliptic curve keys with curve secp521r1. The private key is encrypted with a libargon2i hash of the users&amp;rsquo; password, stored in a libsodium secret box.
+A second copy of the private key is stored encrypted with a libargon2i hash of the users&amp;rsquo; recovery token, to be used when a user restores their account after they lost their password.</description>
+    </item>
+    
+  </channel>
+</rss>

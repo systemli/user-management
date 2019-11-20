@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Userli Documentation</title>
+    <link>/userli/development/</link>
+    <description>Recent content in Development on Userli Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/userli/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Documentation</title>
+      <link>/userli/development/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/documentation/</guid>
+      <description>This page describes how to edit the documentation you&amp;rsquo;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.
+cd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).
+Editing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.</description>
+    </item>
+    
+    <item>
+      <title>Code of Conduct</title>
+      <link>/userli/development/code_of_conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/code_of_conduct/</guid>
+      <description>Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
+    </item>
+    
+    <item>
+      <title>Creating release tarballs</title>
+      <link>/userli/development/release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/release/</guid>
+      <description>&lt;p&gt;Release tarballs are the preferred way to install Userli. This page explains how to create them.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coding style</title>
+      <link>/userli/development/coding_style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/coding_style/</guid>
+      <description>&lt;p&gt;We use the default Symfony coding style.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tests</title>
+      <link>/userli/development/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/userli/development/tests/</guid>
+      <description> Linting, unit tests and functional tests vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
+    </item>
+    
+  </channel>
+</rss>
