@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:20 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Create database :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -304,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -323,9 +323,7 @@
     
     
     <p>Create Userli database and database user.</p>
-
 <p>For simplicity, the user has full access to <code>userli</code> database.</p>
-
 <pre><code>mysql -e 'CREATE DATABASE userli'
 mysql -e 'CREATE USER `userli`@`localhost` IDENTIFIED BY &quot;&lt;password&gt;&quot;'
 mysql -e 'GRANT ALL PRIVILEGES ON userli.* TO `userli`@`localhost`'

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Webserver configuration :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -304,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -323,12 +323,9 @@
     
     
     <p>Userli has to be installed like any other <a href="https://symfony.com/doc/current/setup/web_server_configuration.html">Symfony application</a>.</p>
-
-<p>Below, you&rsquo;ll find some example configurations for webservers.
-Don&rsquo;t blindly copy them, but adjust them to your needs.</p>
-
+<p>Below, you'll find some example configurations for webservers.
+Don't blindly copy them, but adjust them to your needs.</p>
 <p>Caddy</p>
-
 <pre><code>:8080
 gzip
 root /var/www/userli/public
@@ -338,9 +335,7 @@ rewrite {
   to {path} /index.php?{query}
 }
 </code></pre>
-
 <p>Nginx</p>
-
 <pre><code>server {
     listen  80;
 
@@ -367,9 +362,7 @@ rewrite {
     }
 }
 </code></pre>
-
 <p>Apache2</p>
-
 <pre><code>&lt;VirtualHost *:80&gt;
 
     ServerName users.example.org

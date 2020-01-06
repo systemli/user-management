@@ -18,8 +18,12 @@
       <guid>/userli/mail_crypt/legacy/</guid>
       <description>&lt;p&gt;Legacy users (without MailCrypt keys) continue to work without mailbox
 encryption. If they generate a recovery token manually in the account settings,
-a MailCrypt key pair gets created for them. This doesn&amp;rsquo;t enable MailCrypt for
-them automatically, though.&lt;/p&gt;</description>
+a MailCrypt key pair gets created for them. This doesn&#39;t enable MailCrypt for
+them automatically, though. Reason is that this would result in acounts with
+partially unencrypted (the old) and partially encrypted (the new) mails.
+Therefore we decided to leave the exercise to enable MailCrypt for legacy
+users who got a MailCrypt key pair generated in the meantime to the system
+admins (e.g. by a cron script).&lt;/p&gt;</description>
     </item>
     
     <item>

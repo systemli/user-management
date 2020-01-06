@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:20 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Documentation :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -305,15 +305,12 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#editing">Editing</a></li>
-<li><a href="#testing">Testing</a></li>
-<li><a href="#publishing">Publishing</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#editing">Editing</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#publishing">Publishing</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -332,46 +329,26 @@
     
     
     
-    
-
-<p>This page describes how to edit the documentation you&rsquo;re currently reading.
+    <p>This page describes how to edit the documentation you're currently reading.
 The whole documentation is located in the directory <code>hugo</code>. Change into this directory.
 All following commands are supposed to be run from here.</p>
-
 <pre><code>cd hugo
-</code></pre>
-
-<h2 id="requirements">Requirements</h2>
-
+</code></pre><h2 id="requirements">Requirements</h2>
 <p>Download <a href="https://gohugo.io/overview/installing/">Hugo binary</a> for your OS (Windows, Linux, Mac).</p>
-
 <h2 id="editing">Editing</h2>
-
 <p>Change files in <code>hugo/content</code> to edit the documentation.
 See the <a href="https://docdock.netlify.com/original/content-organisation/">DocDock documentation</a> for more information on how to organize content.
 Afterwards, commit your work to your repository.</p>
-
 <pre><code>git commit -a
-</code></pre>
-
-<h2 id="testing">Testing</h2>
-
+</code></pre><h2 id="testing">Testing</h2>
 <p>Run <code>hugo</code> locally to see if your content looks like you imagined.</p>
-
 <pre><code>hugo server
-</code></pre>
-
-<p>Open <a href="http://localhost:1313/">http://localhost:1313/</a> in your local browser.</p>
-
+</code></pre><p>Open <a href="http://localhost:1313/">http://localhost:1313/</a> in your local browser.</p>
 <h2 id="publishing">Publishing</h2>
-
 <p>Run the following script to commit to the branch <code>gh-pages</code>.
 From there, github auto-deploys the documentation.</p>
-
 <pre><code>./publish_docs.sh
-</code></pre>
-
-<p>See <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch">Hugo documentation</a> for more details.</p>
+</code></pre><p>See <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch">Hugo documentation</a> for more details.</p>
 
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Finalize the setup :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -305,13 +305,10 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#create-database-scheme">Create database scheme</a></li>
-<li><a href="#cronjobs">Cronjobs</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#create-database-scheme">Create database scheme</a></li>
+    <li><a href="#cronjobs">Cronjobs</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -331,9 +328,7 @@
     
     
     <p>Last steps to make Userli work properly.</p>
-
 <h2 id="create-database-scheme">Create database scheme</h2>
-
 <pre><code># Create default database schema
 bin/console doctrine:schema:create
 
@@ -343,11 +338,8 @@ bin/console app:reservednames:import
 # Warm up cache
 bin/console cache:warmup
 </code></pre>
-
 <h2 id="cronjobs">Cronjobs</h2>
-
 <p>Some cronjobs are needed in order to run regular tasks:</p>
-
 <pre><code># Daily purge data from deleted mail users
 @daily userli cd /path/to/userli &amp;&amp; bin/console app:users:remove -q
 

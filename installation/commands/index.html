@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Commands :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -304,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -323,7 +323,6 @@
     
     
     <p>This app brings custom commands:</p>
-
 <pre><code>app:munin:account          # Return number of account to munin
 app:munin:alias            # Return number of aliases to munin
 app:munin:voucher          # Return number of vouchers to munin
@@ -336,10 +335,7 @@ app:users:quota            # Get quota of user if set
 app:users:remove           # Removes all mailboxes from deleted users
 app:voucher:create         # Create voucher for a specific user
 app:voucher:unlink         # Remove connection between vouchers and accounts after 3 months
-</code></pre>
-
-<p>Get more information about each command by running:</p>
-
+</code></pre><p>Get more information about each command by running:</p>
 <pre><code>bin/console {{ command }} --help
 </code></pre>
 

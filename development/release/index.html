@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Creating release tarballs :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -304,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -323,16 +323,12 @@
     
     
     <p>Release tarballs are the preferred way to install Userli. This page explains how to create them.</p>
-
-<p>First, you&rsquo;ll need a <a href="https://github.com/settings/tokens">Github API token</a>.
+<p>First, you'll need a <a href="https://github.com/settings/tokens">Github API token</a>.
 The token needs the following priviledges:</p>
-
 <pre><code>public_repo, repo:status, repo_deployment
 </code></pre>
-
 <p>Now, execute the following script. It will create a version tag, release and
 copy the info from <code>CHANGELOG.md</code> to the release info.</p>
-
 <pre><code>$ GITHUB_API_TOKEN=&lt;token&gt; GPG_SIGN_KEY=&quot;&lt;key_id&gt;&quot; ./bin/github-release.sh &lt;version&gt;
 </code></pre>
 

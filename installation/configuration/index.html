@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Configuration :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -74,6 +74,62 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/userli/installation/database/" class="dd-item">
+        <div>
+          <a href="/userli/installation/database/">
+            Create database
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/code/" class="dd-item">
+        <div>
+          <a href="/userli/installation/code/">
+            Get the code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/configuration/" class="dd-item active">
+        <div>
+          <a href="/userli/installation/configuration/">
+            Configuration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/finalize/" class="dd-item">
+        <div>
+          <a href="/userli/installation/finalize/">
+            Finalize the setup
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/webserver/" class="dd-item">
+        <div>
+          <a href="/userli/installation/webserver/">
+            Webserver configuration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/customize/" class="dd-item">
+        <div>
+          <a href="/userli/installation/customize/">
+            Customize
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/checkpassword/" class="dd-item">
+        <div>
+          <a href="/userli/installation/checkpassword/">
+            Checkpassword
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/installation/commands/" class="dd-item">
+        <div>
+          <a href="/userli/installation/commands/">
+            Commands
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/userli/development/" class="dd-item haschildren
@@ -248,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -269,7 +325,6 @@
     <p>You can personalize your Userli instance by creating <code>.env.local</code>,
 which overrides some values from <code>.env</code>. You should at least configure
 the following values.</p>
-
 <pre><code>APP_ENV=prod
 APP_SECRET=&lt;random secret string&gt;
 APP_URL=https://users.example.org
@@ -277,12 +332,9 @@ DATABASE_URL=mysql://userli:&lt;password&gt;@127.0.0.1:3306/userli
 MAILER_URL=smtp://localhost:25?encryption=&amp;auth_mode=
 PROJECT_NAME=example.org
 PROJECT_URL=https://www.example.org
-DOMAIN=example.org
 SENDER_ADDRESS=userli@example.org
 NOTIFICATION_ADDRESS=admin@example.org
-</code></pre>
-
-<p>Look into <code>.env</code> to get more information about variables and how to handle them.</p>
+</code></pre><p>Look into <code>.env</code> to get more information about variables and how to handle them.</p>
 
     
     

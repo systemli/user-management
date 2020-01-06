@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Tests :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -181,17 +181,38 @@
       <a href="/userli/mail_crypt/">MailCrypt</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/userli/mail_crypt/legacy/" class="dd-item">
+      <li data-nav-id="/userli/development/documentation/" class="dd-item">
         <div>
-          <a href="/userli/mail_crypt/legacy/">
-            Migrating legacy users
+          <a href="/userli/development/documentation/">
+            Documentation
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/userli/mail_crypt/details/" class="dd-item">
+      <li data-nav-id="/userli/development/code_of_conduct/" class="dd-item">
         <div>
-          <a href="/userli/mail_crypt/details/">
-            Implementation details
+          <a href="/userli/development/code_of_conduct/">
+            Code of Conduct
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/development/release/" class="dd-item">
+        <div>
+          <a href="/userli/development/release/">
+            Creating release tarballs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/development/coding_style/" class="dd-item">
+        <div>
+          <a href="/userli/development/coding_style/">
+            Coding style
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/userli/development/tests/" class="dd-item active">
+        <div>
+          <a href="/userli/development/tests/">
+            Tests
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -305,13 +326,10 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</a></li>
-<li><a href="#test-checkpassword-script">Test checkpassword script</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</a></li>
+    <li><a href="#test-checkpassword-script">Test checkpassword script</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -330,17 +348,12 @@
     
     
     
-    
-
-<h2 id="linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</h2>
-
+    <h2 id="linting-unit-tests-and-functional-tests">Linting, unit tests and functional tests</h2>
 <pre><code>vagrant up &amp;&amp; vagrant ssh
 make test
 make integration
 </code></pre>
-
 <h2 id="test-checkpassword-script">Test checkpassword script</h2>
-
 <pre><code>vagrant up &amp;&amp; vagrant ssh
 bin/console doctrine:schema:create -n &amp;&amp; bin/console doctrine:fixture:load -n &amp;&amp; exit
 cd .. &amp;&amp; tests/test_checkpassword_login.sh

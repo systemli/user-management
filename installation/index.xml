@@ -74,7 +74,7 @@ the following values.&lt;/p&gt;</description>
       <guid>/userli/installation/checkpassword/</guid>
       <description>&lt;p&gt;The PHP console command &lt;code&gt;bin/console app:users:checkpassword&lt;/code&gt; provides a
 checkpassword command to be used for authentication (userdb and passdb
-lookup) by external services. So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
+lookup) by external services. So far, it&#39;s only tested with Dovecot.&lt;/p&gt;</description>
     </item>
     
     <item>

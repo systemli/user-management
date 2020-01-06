@@ -25,8 +25,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/development/documentation/</guid>
-      <description>This page describes how to edit the documentation you&amp;rsquo;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.
-cd hugo  Requirements Download Hugo binary for your OS (Windows, Linux, Mac).
+      <description>This page describes how to edit the documentation you&#39;re currently reading. The whole documentation is located in the directory hugo. Change into this directory. All following commands are supposed to be run from here.
+cd hugo Requirements Download Hugo binary for your OS (Windows, Linux, Mac).
 Editing Change files in hugo/content to edit the documentation. See the DocDock documentation for more information on how to organize content. Afterwards, commit your work to your repository.</description>
     </item>
     
@@ -38,8 +38,12 @@ Editing Change files in hugo/content to edit the documentation. See the DocDock 
       <guid>/userli/mail_crypt/legacy/</guid>
       <description>&lt;p&gt;Legacy users (without MailCrypt keys) continue to work without mailbox
 encryption. If they generate a recovery token manually in the account settings,
-a MailCrypt key pair gets created for them. This doesn&amp;rsquo;t enable MailCrypt for
-them automatically, though.&lt;/p&gt;</description>
+a MailCrypt key pair gets created for them. This doesn&#39;t enable MailCrypt for
+them automatically, though. Reason is that this would result in acounts with
+partially unencrypted (the old) and partially encrypted (the new) mails.
+Therefore we decided to leave the exercise to enable MailCrypt for legacy
+users who got a MailCrypt key pair generated in the meantime to the system
+admins (e.g. by a cron script).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -160,7 +164,7 @@ the following values.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/userli/development/tests/</guid>
-      <description> Linting, unit tests and functional tests vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
+      <description>Linting, unit tests and functional tests vagrant up &amp;amp;&amp;amp; vagrant ssh make test make integration  Test checkpassword script vagrant up &amp;amp;&amp;amp; vagrant ssh bin/console doctrine:schema:create -n &amp;amp;&amp;amp; bin/console doctrine:fixture:load -n &amp;amp;&amp;amp; exit cd .. &amp;amp;&amp;amp; tests/test_checkpassword_login.sh  </description>
     </item>
     
     <item>
@@ -189,7 +193,7 @@ the following values.&lt;/p&gt;</description>
       <guid>/userli/installation/checkpassword/</guid>
       <description>&lt;p&gt;The PHP console command &lt;code&gt;bin/console app:users:checkpassword&lt;/code&gt; provides a
 checkpassword command to be used for authentication (userdb and passdb
-lookup) by external services. So far, it&amp;rsquo;s only tested with Dovecot.&lt;/p&gt;</description>
+lookup) by external services. So far, it&#39;s only tested with Dovecot.&lt;/p&gt;</description>
     </item>
     
     <item>

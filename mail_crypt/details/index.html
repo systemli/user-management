@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Implementation details :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -304,7 +304,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -325,7 +325,6 @@
     <p>We use elliptic curve keys with curve secp521r1. The private key is encrypted
 with a libargon2i hash of the users&rsquo; password, stored in a libsodium secret
 box.</p>
-
 <p>A second copy of the private key is stored encrypted with a libargon2i hash of
 the users&rsquo; recovery token, to be used when a user restores their account after
 they lost their password.</p>

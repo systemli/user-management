@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>MailCrypt :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -299,7 +299,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -319,50 +319,43 @@
     
 
 <p>The software has builtin support for
-<a href="https://wiki.dovecot.org/Plugins/MailCrypt">Dovecot&rsquo;s mailbox encryption</a>, using the
+<a href="https://wiki.dovecot.org/Plugins/MailCrypt">Dovecot's mailbox encryption</a>, using the
 <a href="https://wiki.dovecot.org/Plugins/MailCrypt#Global_keys">global keys mode</a>.
 Keys are created and maintained by userli and handed over to Dovecot via
 <code>checkpassword</code> script.</p>
-
 <p>The MailCrypt feature is enabled per default and can optionally be switched
-off globally by setting <code>MAIL_CRYPT_ENABLE=0</code> in the dotenv (<code>.env</code>) file.</p>
-
-<p>If you want to enable MailCrypt for some users, but don&rsquo;t want new users to
-have MailCrypt enabled per default, you can set <code>MAIL_CRYPT_AUTO=0</code> in the
-dotenv (<code>.env</code>) file.</p>
-
+off globally by setting <code>MAIL_CRYPT=0</code> in the dotenv (<code>.env</code>) file.</p>
+<p>If you want to enable MailCrypt for some users, but don't want new users to
+have MailCrypt enabled per default, you can set <code>MAIL_CRYPT=1</code> in the dotenv
+(<code>.env</code>) file. The following values are supported for <code>MAIL_CRYPT</code>:</p>
+<ul>
+<li><code>MAIL_CRYPT=0</code> - Disable MailCrypt globally</li>
+<li><code>MAIL_CRYPT=1</code> - Allow to use MailCrypt, needs to be enabled manually for new
+users</li>
+<li><code>MAIL_CRYPT=2</code> - Enforce MailCrypt key generation for new users</li>
+<li><code>MAIL_CRYPT=3</code> - Enforce MailCrypt key generation for all users, see the
+documentation about migrating legacy users for more info</li>
+</ul>
 <p>In order to enable MailCrypt in Dovecot, the following is required:</p>
-
 <ul>
 <li>Add <code>mail_crypt</code> to the <code>mail_plugins</code> list in <code>/etc/dovecot/conf.d/10-mail.conf</code></li>
 <li>Set <code>mail_crypt_save_version = 0</code> in <code>/etc/dovecot/conf.d/90-mail-crypt.conf</code></li>
 </ul>
-
 <p>The latter disables MailCrypt per default and is necessary to not break
 incoming mail for legacy users without MailCrypt keys. The checkpassword script
 automatically sets <code>mail_crypt_save_version = 2</code> for all users with MailCrypt
 keys.</p>
-
-<p>MailCrypt can be turned on/off for individual users by setting the <code>mailCrypt</code>
+<p>MailCrypt can be turned on/off for individual users by setting the <code>mail_crypt</code>
 switch in the <code>virtual_users</code> database table. This switch is mainly meant to
 provide a migration path from legacy users without MailCrypt keys. On new
-setups, it&rsquo;s recommended to keep MailCrypt enabled for all users.</p>
-
-<ul class="children children-h2">
-
-<span><h2>
-        <a href="/userli/mail_crypt/legacy/" >Migrating legacy users</a></h2>
-<p><p>Legacy users (without MailCrypt keys) continue to work without mailbox
-encryption. If they generate a recovery token manually in the account settings,
-a MailCrypt key pair gets created for them. This doesn&rsquo;t enable MailCrypt for
-them automatically, though.</p></p>
-</span>
-
-<span><h2>
-        <a href="/userli/mail_crypt/details/" >Implementation details</a></h2>
-<p>Cryptographic primitives</p>
-</span>
-</ul>
+setups, it's recommended to keep MailCrypt enabled for all users.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Migrating legacy users<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->Implementation details<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 
 
 

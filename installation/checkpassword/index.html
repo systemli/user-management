@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-20T09:47:21 CET">
+<meta name="revised" content="2020-01-06T08:24:47 CET">
 <title>Checkpassword :: Userli Documentation</title>
 <link rel="shortcut icon" href="/userli/images/favicon.png" type="image/x-icon" />
 <link href="/userli/css/nucleus.css" rel="stylesheet">
@@ -305,12 +305,9 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#required-permissions-and-sudo">Required permissions and sudo</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#required-permissions-and-sudo">Required permissions and sudo</a></li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -331,16 +328,12 @@
     
     <p>The PHP console command <code>bin/console app:users:checkpassword</code> provides a
 checkpassword command to be used for authentication (userdb and passdb
-lookup) by external services. So far, it&rsquo;s only tested with Dovecot.</p>
-
+lookup) by external services. So far, it's only tested with Dovecot.</p>
 <p>In order to use the userli checkpassword command with Dovecot (&lt; 2.3), the
 <code>default_vsz_limit</code> (defaults to 256MB) needs to be raised in the Dovecot
 configuration. Starting with Dovecot 2.3, the default is 1G.</p>
-
 <p>Example configuration for using checkpassword in Dovecot:</p>
-
 <p><code>/etc/dovecot/conf.d/auth-checkpassword.conf.ext</code>:</p>
-
 <pre><code>passdb {
   driver = checkpassword
   args = /path/to/userli/bin/console app:users:checkpassword
@@ -355,15 +348,11 @@ userdb {
   args = /path/to/userli/bin/console app:users:checkpassword
 }
 </code></pre>
-
 <h2 id="required-permissions-and-sudo">Required permissions and sudo</h2>
-
 <p>In order for checkpassword to work as expected, your Dovecot system user needs
 read access to the userli application.</p>
-
 <p>In order to grant the required permissions, add the Dovecot system user to the
 userli system group:</p>
-
 <pre><code>adduser dovecot userli
 </code></pre>
 
