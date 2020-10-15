@@ -1,6 +1,5 @@
 dist: xenial
 language: php
-sudo: false
 
 php:
   - '7.2'
@@ -51,7 +50,7 @@ before_install:
 install:
   - composer install
 
-matrix:
+jobs:
   include:
     - script: make integration
       name: Integration with sqlite
